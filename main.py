@@ -35,6 +35,7 @@ def obtener_datos_claro():
             raise HTTPException(status_code=500, detail="No se encontró 'access_token' en la respuesta.")
             
     except requests.exceptions.RequestException as e:
+         print(f"DEBUG: Error en auth: {str(e)}")
          raise HTTPException(status_code=502, detail=f"Error al conectar con servidor de auth: {str(e)}")
     
     # 2. Hacemos la consulta a la API con ese token
@@ -60,6 +61,7 @@ def obtener_datos_claro():
         return respuesta_api.json()
 
     except requests.exceptions.RequestException as e:
+        print(f"DEBUG: Error en consulta API: {str(e)}")
         raise HTTPException(status_code=502, detail=f"Error al consultar la API: {str(e)}")
 
 
@@ -124,5 +126,8 @@ async def whatsapp_webhook(request: Request):
 
 if __name__ == "__main__":
     import uvicorn
+    # Render proporciona el puerto en la variable de entorno 'PORT'
+    port = int(os.environ.get("PORT", 8000))
     # Corremos uvicorn manualmente para facilitar pruebas en algunos entornos
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=False if os.environ.get("PORT") else True)
+
