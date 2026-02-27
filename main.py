@@ -15,7 +15,7 @@ app = FastAPI()
 # Montemos la carpeta 'static' en la ruta '/static'
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 def read_root():
     return FileResponse("static/index.html")
 
