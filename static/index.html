@@ -29,7 +29,14 @@
         </header>
 
         <main class="card">
-            <section class="search-container">
+            <!-- Tabs / Filter -->
+            <div class="main-tabs">
+                <button class="tab-btn active" id="tabCIUU">Actividades CIUU</button>
+                <button class="tab-btn" id="tabNIT">Consulta por NIT</button>
+            </div>
+
+            <!-- CIUU Search (Existing) -->
+            <section class="search-container" id="ciuuSearch">
                 <div class="search-wrapper">
                     <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -39,6 +46,19 @@
                     <input type="text" id="searchInput" class="search-input"
                         placeholder="Buscar por código (ej. 0111) o palabra clave...">
                 </div>
+            </section>
+
+            <!-- NIT Search (New) -->
+            <section class="search-container" id="nitSearch" style="display: none;">
+                <div class="search-wrapper nit-wrapper">
+                    <input type="text" id="nitInput" class="search-input"
+                        placeholder="Ingresa NIT (ej: 959595-3 o 'err' para demo)...">
+                    <button class="action-btn" onclick="searchByNIT()">Consultar</button>
+                </div>
+                <p class="demo-notice" id="demoNotice"
+                    style="display: none; color: var(--text-muted); font-size: 0.8rem; margin-top: 0.5rem; text-align: center;">
+                    💡 En Render se muestra una simulación por falta de mTLS. Prueba con "9595" o "error".
+                </p>
             </section>
 
             <div class="table-viewport">
@@ -92,6 +112,22 @@
                 <span>APIM v2.4</span>
             </footer>
         </main>
+    </div>
+
+    <!-- NIT Result Modal -->
+    <div id="nitModal" class="modal">
+        <div class="modal-content card">
+            <div class="modal-header">
+                <h2>Resultado de Consulta</h2>
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="modalBody" class="modal-body">
+                <!-- Content injected via JS -->
+            </div>
+            <div class="modal-footer">
+                <button class="close-btn" onclick="closeModal()">Cerrar</button>
+            </div>
+        </div>
     </div>
 
     <script src="/static/app.js?v=1.1"></script>

@@ -11,9 +11,90 @@ document.addEventListener('DOMContentLoaded', () => {
             filterTable(e.target.value.trim().toLowerCase());
         }, 300);
     });
+
+    // Toggle Tabs
+    const tabCIUU = document.getElementById('tabCIUU');
+    const tabNIT = document.getElementById('tabNIT');
+    const ciuuSection = document.getElementById('ciuuSearch');
+    const nitSection = document.getElementById('nitSearch');
+    const demoNotice = document.getElementById('demoNotice');
+
+    tabCIUU.addEventListener('click', () => {
+        tabCIUU.classList.add('active');
+        tabNIT.classList.remove('active');
+        ciuuSection.style.display = 'block';
+        nitSection.style.display = 'none';
+    });
+
+    tabNIT.addEventListener('click', () => {
+        tabNIT.classList.add('active');
+        tabCIUU.classList.remove('active');
+        nitSection.style.display = 'block';
+        ciuuSection.style.display = 'none';
+
+        // Show demo notice if on Render
+        if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+            demoNotice.style.display = 'block';
+        }
+    });
 });
 
 let allData = [];
+
+// ... [Keep existing functions: fetchData, renderTable, filterTable, updateRowCount, escapeHtml] ...
+
+async function searchByNIT() {
+    const nitInput = document.getElementById('nitInput');
+    const nit = nitInput.value.trim();
+    const modal = document.getElementById('nitModal');
+    const modalBody = document.getElementById('modalBody');
+
+    if (!nit) return;
+
+    modalBody.innerHTML = '<div style="text-align:center; padding: 2rem;"><p>Consultando APIM...</p><div class="pulse-dot" style="margin: 1rem auto;"></div></div>';
+    modal.style.display = 'flex';
+
+    try {
+        const response = await fetch(`/api/client/${encodeURIComponent(nit)}`);
+        const result = await response.json();
+
+        if (result.status === 'success') {
+            const d = result.data;
+            let sourceLabel = result.source.includes('demo') ? '<span style="color:var(--warning); font-size: 0.7rem; display:block; margin-bottom: 0.5rem;">[DEMO - SIMULACIÓN]</span>' : '';
+
+            modalBody.innerHTML = `
+                ${sourceLabel}
+                <div class="detail-item"><span class="detail-label">NIT</span><span class="detail-val">${escapeHtml(d.nit)}</span></div>
+                <div class="detail-item"><span class="detail-label">Razón Social</span><span class="detail-val">${escapeHtml(d.nombre)}</span></div>
+                <div class="detail-item"><span class="detail-label">Estado</span><span class="detail-val" style="color:var(--success)">${escapeHtml(d.estado)}</span></div>
+                <div class="detail-item"><span class="detail-label">Segmento</span><span class="detail-val">${escapeHtml(d.segmento)}</span></div>
+                <div class="detail-item"><span class="detail-label">Dirección</span><span class="detail-val">${escapeHtml(d.direccion)}</span></div>
+                <div class="detail-item"><span class="detail-label">Vinculación</span><span class="detail-val">${escapeHtml(d.fecha_vinculacion)}</span></div>
+            `;
+        } else if (result.status === 'not_found') {
+            modalBody.innerHTML = `
+                <div style="text-align:center; padding: 1rem;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">❌</div>
+                    <p style="font-weight:600;">NIT no encontrado</p>
+                    <p style="color:var(--text-muted); font-size: 0.9rem;">${escapeHtml(result.message)}</p>
+                </div>`;
+        } else {
+            modalBody.innerHTML = `
+                <div style="text-align:center; color: var(--error); padding: 1rem;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">⚠️</div>
+                    <p style="font-weight:600;">Error en la API</p>
+                    <p style="font-size: 0.8rem; margin-top: 0.5rem;">${escapeHtml(result.message)}</p>
+                    <pre style="text-align:left; font-size: 0.7rem; background:#fee; padding: 1rem; margin-top: 1rem; border-radius: 8px; overflow-x: auto;">${escapeHtml(result.detail || '')}</pre>
+                </div>`;
+        }
+    } catch (error) {
+        modalBody.innerHTML = `<p style="color:var(--error)">Error de red al consultar el servidor.</p>`;
+    }
+}
+
+function closeModal() {
+    document.getElementById('nitModal').style.display = 'none';
+}
 
 async function fetchData() {
     const loader = document.getElementById('loader');

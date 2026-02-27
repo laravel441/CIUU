@@ -119,6 +119,92 @@ def get_api_data():
         raise HTTPException(status_code=502, detail=str(e))
 
 
+@app.get("/api/client/{nit}")
+def get_client_by_nit(nit: str):
+    """Consulta de cliente por NIT con Modo Demo para Render"""
+    
+    # 1. Verificar si estamos en modo Demo (Render sin certificados)
+    cert_path = os.environ.get("CERT_PATH")
+    if os.environ.get("PORT") and not (cert_path and os.path.exists(cert_path)):
+        # ESCENARIOS DE DEMO
+        print(f"DEBUG: Modo Demo NIT activado para: {nit}")
+        
+        # Simulación de NIT encontrado
+        if "9595" in nit:
+             return {
+                "source": "demo_found",
+                "status": "success",
+                "data": {
+                    "nit": nit,
+                    "nombre": "CLIENTE DEMO S.A.S",
+                    "estado": "Activo",
+                    "segmento": "Corporativo",
+                    "direccion": "Calle Falsa 123, Bogotá",
+                    "fecha_vinculacion": "2022-05-15"
+                }
+            }
+        
+        # Simulación de NIT con error de API
+        if "error" in nit.lower() or "500" in nit:
+             return {
+                "source": "demo_error",
+                "status": "error",
+                "message": "Error interno del servidor APIM (Simulado)",
+                "detail": "Error en el conector backend de Claro"
+            }
+            
+        # Simulación de NIT no encontrado
+        return {
+            "source": "demo_not_found",
+            "status": "not_found",
+            "message": f"No se encontró cliente con el NIT {nit}"
+        }
+
+    # 2. Lógica real (para local o Render con certificados)
+    try:
+        # Reutilizamos el flujo de auth
+        datos_auth = {
+            "client_id": "usaccoinfo",
+            "client_secret": "757fb7ee-55cc-4311-9b11-e97616d24689",
+            "grant_type": "client_credentials"
+        }
+        url_auth = "https://apim-calidad.claro.com.co/MsCommunicatAuthToken/User/authenticate"
+        
+        # Usamos los certificados si existen
+        key_path = os.environ.get("KEY_PATH")
+        cliente_cert = (cert_path, key_path) if cert_path and key_path and os.path.exists(cert_path) else None
+        
+        # Token
+        r_auth = requests.post(url_auth, data=datos_auth, verify=False, cert=cliente_cert, timeout=10)
+        r_auth.raise_for_status()
+        token = r_auth.json().get("access_token", r_auth.json().get("token"))
+        
+        # Consulta Cliente
+        url_api = f"https://apim-calidad.claro.com.co/APIMCusAccoInfoQuery/MS/CUS/CustomerBill/RSCusAccoInfoQuery/V1/GET/QueryClient"
+        params = {"nitClient": nit}
+        headers = {"Authorization": f"Bearer {token}"}
+        
+        r_client = requests.get(url_api, params=params, headers=headers, verify=False, cert=cliente_cert, timeout=10)
+        r_client.raise_for_status()
+        
+        res = r_client.json()
+        res["source"] = "live"
+        return res
+
+    except Exception as e:
+        print(f"DEBUG: Error consulta NIT real: {e}")
+        error_msg = str(e)
+        if hasattr(e, 'response') and e.response is not None:
+             error_msg = e.response.text
+             
+        return {
+            "source": "error",
+            "status": "error",
+            "message": "Error al conectar con la API real",
+            "detail": error_msg
+        }
+
+
 @app.post("/webhook/whatsapp")
 async def whatsapp_webhook(request: Request):
     """
