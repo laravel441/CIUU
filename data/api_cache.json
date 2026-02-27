@@ -1,0 +1,1993 @@
+{
+    "responseCode": 200,
+    "messageCode": "OK",
+    "message": "Consulta exitosa",
+    "timestamp": "2026-02-27T14:38:13.170Z",
+    "transactionId": "32acc536-8a5c-4808-a020-6b2525e972e6",
+    "data": {
+        "codeTransaction": 1,
+        "message": "Proceso exitoso.",
+        "information": [
+            {
+                "dataField": "0111",
+                "descriptionField": "Cultivo de cereales (excepto arroz), legumbres y semillas oleaginosas "
+            },
+            {
+                "dataField": "0112",
+                "descriptionField": "Cultivo de arroz "
+            },
+            {
+                "dataField": "0113",
+                "descriptionField": "Cultivo de hortalizas, raíces y tubérculos "
+            },
+            {
+                "dataField": "0114",
+                "descriptionField": "Cultivo de tabaco "
+            },
+            {
+                "dataField": "0115",
+                "descriptionField": "Cultivo de plantas textiles "
+            },
+            {
+                "dataField": "0119",
+                "descriptionField": "Otros cultivos transitorios n.c.p."
+            },
+            {
+                "dataField": "0121",
+                "descriptionField": "Cultivo de frutas tropicales y subtropicales"
+            },
+            {
+                "dataField": "0122",
+                "descriptionField": "Cultivo de plátano y banano"
+            },
+            {
+                "dataField": "0123",
+                "descriptionField": "Cultivo de café"
+            },
+            {
+                "dataField": "0124",
+                "descriptionField": "Cultivo de caña de azúcar"
+            },
+            {
+                "dataField": "0125",
+                "descriptionField": "Cultivo de flor de corte"
+            },
+            {
+                "dataField": "0126",
+                "descriptionField": "Cultivo de palma para aceite (palma africana) y otros frutos oleaginosos"
+            },
+            {
+                "dataField": "0127",
+                "descriptionField": "Cultivo de plantas con las que se preparan bebidas"
+            },
+            {
+                "dataField": "0128",
+                "descriptionField": "Cultivo de especias y de plantas aromáticas y medicinales "
+            },
+            {
+                "dataField": "0129",
+                "descriptionField": "Otros cultivos permanentes n.c.p."
+            },
+            {
+                "dataField": "0130",
+                "descriptionField": "Propagación de plantas (actividades de los viveros, excepto viveros forestales) "
+            },
+            {
+                "dataField": "0141",
+                "descriptionField": "Cría de ganado bovino y bufalino"
+            },
+            {
+                "dataField": "0142",
+                "descriptionField": "Cría de caballos y otros equinos "
+            },
+            {
+                "dataField": "0143",
+                "descriptionField": "Cría de ovejas y cabras "
+            },
+            {
+                "dataField": "0144",
+                "descriptionField": "Cría de ganado porcino"
+            },
+            {
+                "dataField": "0145",
+                "descriptionField": "Cría de aves de corral"
+            },
+            {
+                "dataField": "0149",
+                "descriptionField": "Cría de otros animales n.c.p."
+            },
+            {
+                "dataField": "0150",
+                "descriptionField": "Explotación mixta (agrícola y pecuaria) "
+            },
+            {
+                "dataField": "0161",
+                "descriptionField": "Actividades de apoyo a la agricultura "
+            },
+            {
+                "dataField": "0162",
+                "descriptionField": "Actividades de apoyo a la ganadería"
+            },
+            {
+                "dataField": "0163",
+                "descriptionField": "Actividades posteriores a la cosecha "
+            },
+            {
+                "dataField": "0164",
+                "descriptionField": "Tratamiento de semillas para propagación "
+            },
+            {
+                "dataField": "0170",
+                "descriptionField": "Caza ordinaria y mediante trampas y actividades de servicios conexas "
+            },
+            {
+                "dataField": "0210",
+                "descriptionField": "Silvicultura y otras actividades forestales"
+            },
+            {
+                "dataField": "0220",
+                "descriptionField": "Extracción de madera "
+            },
+            {
+                "dataField": "0230",
+                "descriptionField": "Recolección de productos forestales diferentes a la madera"
+            },
+            {
+                "dataField": "0240",
+                "descriptionField": "Servicios de apoyo a la silvicultura "
+            },
+            {
+                "dataField": "0311",
+                "descriptionField": "Pesca marítima "
+            },
+            {
+                "dataField": "0312",
+                "descriptionField": "Pesca de agua dulce "
+            },
+            {
+                "dataField": "0321",
+                "descriptionField": "Acuicultura marítima "
+            },
+            {
+                "dataField": "0322",
+                "descriptionField": "Acuicultura de agua dulce"
+            },
+            {
+                "dataField": "0510",
+                "descriptionField": "Extracción de hulla (carbón de piedra)"
+            },
+            {
+                "dataField": "0520",
+                "descriptionField": "Extracción de carbón lignito"
+            },
+            {
+                "dataField": "0610",
+                "descriptionField": "Extracción de petróleo crudo"
+            },
+            {
+                "dataField": "0620",
+                "descriptionField": "Extracción de gas natural"
+            },
+            {
+                "dataField": "0710",
+                "descriptionField": "Extracción de minerales de hierro"
+            },
+            {
+                "dataField": "0721",
+                "descriptionField": "Extracción de minerales de uranio y de torio"
+            },
+            {
+                "dataField": "0722",
+                "descriptionField": "Extracción de oro y otros metales preciosos"
+            },
+            {
+                "dataField": "0723",
+                "descriptionField": "Extracción de minerales de níquel"
+            },
+            {
+                "dataField": "0729",
+                "descriptionField": "Extracción de otros minerales metalíferos no ferrosos n.c.p."
+            },
+            {
+                "dataField": "0811",
+                "descriptionField": "Extracción de piedra, arena, arcillas comunes, yeso y anhidrita"
+            },
+            {
+                "dataField": "0812",
+                "descriptionField": "Extracción de arcillas de uso industrial, caliza, caolín y bentonitas"
+            },
+            {
+                "dataField": "0820",
+                "descriptionField": "Extracción de esmeraldas, piedras preciosas y semipreciosas"
+            },
+            {
+                "dataField": "0891",
+                "descriptionField": "Extracción de minerales para la fabricación de abonos y productos químicos"
+            },
+            {
+                "dataField": "0892",
+                "descriptionField": "Extracción de halita (sal)"
+            },
+            {
+                "dataField": "0899",
+                "descriptionField": "Extracción de otros minerales no metálicos n.c.p."
+            },
+            {
+                "dataField": "0910",
+                "descriptionField": "Actividades de apoyo para la extracción de petróleo y de gas natural"
+            },
+            {
+                "dataField": "0990",
+                "descriptionField": "Actividades de apoyo para otras actividades de explotación de minas y canteras"
+            },
+            {
+                "dataField": "1011",
+                "descriptionField": "Procesamiento y conservación de carne y productos cárnicos"
+            },
+            {
+                "dataField": "1012",
+                "descriptionField": "Procesamiento y conservación de pescados, crustáceos y moluscos"
+            },
+            {
+                "dataField": "1020",
+                "descriptionField": "Procesamiento y conservación de frutas, legumbres, hortalizas y tubérculos"
+            },
+            {
+                "dataField": "1030",
+                "descriptionField": "Elaboración de aceites y grasas de origen vegetal y animal"
+            },
+            {
+                "dataField": "1040",
+                "descriptionField": "Elaboración de productos lácteos"
+            },
+            {
+                "dataField": "1051",
+                "descriptionField": "Elaboración de productos de molinería"
+            },
+            {
+                "dataField": "1052",
+                "descriptionField": "Elaboración de almidones y productos derivados del almidón"
+            },
+            {
+                "dataField": "1061",
+                "descriptionField": "Trilla de café"
+            },
+            {
+                "dataField": "1062",
+                "descriptionField": "Descafeinado, tostión y molienda del café"
+            },
+            {
+                "dataField": "1063",
+                "descriptionField": "Otros derivados del café"
+            },
+            {
+                "dataField": "1071",
+                "descriptionField": "Elaboración y refinación de azúcar"
+            },
+            {
+                "dataField": "1072",
+                "descriptionField": "Elaboración de panela"
+            },
+            {
+                "dataField": "1081",
+                "descriptionField": "Elaboración de productos de panadería"
+            },
+            {
+                "dataField": "1082",
+                "descriptionField": "Elaboración de cacao, chocolate y productos de confitería"
+            },
+            {
+                "dataField": "1083",
+                "descriptionField": "Elaboración de macarrones, fideos, alcuzcuz y productos farináceos similares"
+            },
+            {
+                "dataField": "1084",
+                "descriptionField": "Elaboración de comidas y platos preparados"
+            },
+            {
+                "dataField": "1089",
+                "descriptionField": "Elaboración de otros productos alimenticios n.c.p."
+            },
+            {
+                "dataField": "1090",
+                "descriptionField": "Elaboración de alimentos preparados para animales"
+            },
+            {
+                "dataField": "1101",
+                "descriptionField": "Destilación, rectificación y mezcla de bebidas alcohólicas"
+            },
+            {
+                "dataField": "1102",
+                "descriptionField": "Elaboración de bebidas fermentadas no destiladas"
+            },
+            {
+                "dataField": "1103",
+                "descriptionField": "Producción de malta, elaboración de cervezas y otras bebidas malteadas"
+            },
+            {
+                "dataField": "1104",
+                "descriptionField": "Elaboración de bebidas no alcohólicas, producción de aguas minerales y de otras aguas embotelladas"
+            },
+            {
+                "dataField": "1200",
+                "descriptionField": "Elaboración de productos de tabaco"
+            },
+            {
+                "dataField": "1311",
+                "descriptionField": "Preparación e hilatura de fibras textiles"
+            },
+            {
+                "dataField": "1312",
+                "descriptionField": "Tejeduría de productos textiles"
+            },
+            {
+                "dataField": "1313",
+                "descriptionField": "Acabado de productos textiles"
+            },
+            {
+                "dataField": "1391",
+                "descriptionField": "Fabricación de tejidos de punto y ganchillo"
+            },
+            {
+                "dataField": "1392",
+                "descriptionField": "Confección de artículos con materiales textiles, excepto prendas de vestir"
+            },
+            {
+                "dataField": "1393",
+                "descriptionField": "Fabricación de tapetes y alfombras para pisos"
+            },
+            {
+                "dataField": "1394",
+                "descriptionField": "Fabricación de cuerdas, cordeles, cables, bramantes y redes"
+            },
+            {
+                "dataField": "1399",
+                "descriptionField": "Fabricación de otros artículos textiles n.c.p."
+            },
+            {
+                "dataField": "1410",
+                "descriptionField": "Confección de prendas de vestir, excepto prendas de piel"
+            },
+            {
+                "dataField": "1420",
+                "descriptionField": "Fabricación de artículos de piel"
+            },
+            {
+                "dataField": "1430",
+                "descriptionField": "Fabricación de artículos de punto y ganchillo"
+            },
+            {
+                "dataField": "1511",
+                "descriptionField": "Curtido y recurtido de cueros; recurtido y teñido de pieles"
+            },
+            {
+                "dataField": "1512",
+                "descriptionField": "Fabricación de artículos de viaje, bolsos de mano y artículos similares elaborados en cuero, y fabricación de artículos de talabartería y guarnicionería"
+            },
+            {
+                "dataField": "1513",
+                "descriptionField": "Fabricación de artículos de viaje, bolsos de mano y artículos similares; artículos de talabartería y guarnicionería elaborados en otros materiales"
+            },
+            {
+                "dataField": "1521",
+                "descriptionField": "Fabricación de calzado de cuero y piel, con cualquier tipo de suela"
+            },
+            {
+                "dataField": "1522",
+                "descriptionField": "Fabricación de otros tipos de calzado, excepto calzado de cuero y piel"
+            },
+            {
+                "dataField": "1523",
+                "descriptionField": "Fabricación de partes del calzado"
+            },
+            {
+                "dataField": "1610",
+                "descriptionField": "Aserrado, acepillado e impregnación de la madera"
+            },
+            {
+                "dataField": "1620",
+                "descriptionField": "Fabricación de hojas de madera para enchapado; fabricación de tableros contrachapados, tableros laminados, tableros de partículas y otros tableros y paneles"
+            },
+            {
+                "dataField": "1630",
+                "descriptionField": "Fabricación de partes y piezas de madera, de carpintería y ebanistería para la construcción"
+            },
+            {
+                "dataField": "1640",
+                "descriptionField": "Fabricación de recipientes de madera"
+            },
+            {
+                "dataField": "1690",
+                "descriptionField": "Fabricación de otros productos de madera; fabricación de artículos de corcho, cestería y espartería"
+            },
+            {
+                "dataField": "1701",
+                "descriptionField": "Fabricación de pulpas (pastas) celulósicas; papel y cartón"
+            },
+            {
+                "dataField": "1702",
+                "descriptionField": "Fabricación de papel y cartón ondulado (corrugado); fabricación de envases, empaques y de embalajes de papel y cartón."
+            },
+            {
+                "dataField": "1709",
+                "descriptionField": "Fabricación de otros artículos de papel y cartón"
+            },
+            {
+                "dataField": "1811",
+                "descriptionField": "Actividades de impresión"
+            },
+            {
+                "dataField": "1812",
+                "descriptionField": "Actividades de servicios relacionados con la impresión"
+            },
+            {
+                "dataField": "1820",
+                "descriptionField": "Producción de copias a partir de grabaciones originales "
+            },
+            {
+                "dataField": "1910",
+                "descriptionField": "Fabricación de productos de hornos de coque"
+            },
+            {
+                "dataField": "1921",
+                "descriptionField": "Fabricación de productos de la refinación del petróleo"
+            },
+            {
+                "dataField": "1922",
+                "descriptionField": "Actividad de mezcla de combustibles"
+            },
+            {
+                "dataField": "2011",
+                "descriptionField": "Fabricación de sustancias y productos químicos básicos"
+            },
+            {
+                "dataField": "2012",
+                "descriptionField": "Fabricación de abonos y compuestos inorgánicos nitrogenados"
+            },
+            {
+                "dataField": "2013",
+                "descriptionField": "Fabricación de plásticos en formas primarias"
+            },
+            {
+                "dataField": "2014",
+                "descriptionField": "Fabricación de caucho sintético en formas primarias"
+            },
+            {
+                "dataField": "2021",
+                "descriptionField": "Fabricación de plaguicidas y otros productos químicos de uso agropecuario"
+            },
+            {
+                "dataField": "2022",
+                "descriptionField": "Fabricación de pinturas, barnices y revestimientos similares, tintas para impresión y masillas"
+            },
+            {
+                "dataField": "2023",
+                "descriptionField": "Fabricación de jabones y detergentes, preparados para limpiar y pulir; perfumes y preparados de tocador"
+            },
+            {
+                "dataField": "2029",
+                "descriptionField": "Fabricación de otros productos químicos n.c.p."
+            },
+            {
+                "dataField": "2030",
+                "descriptionField": "Fabricación de fibras sintéticas y artificiales"
+            },
+            {
+                "dataField": "2100",
+                "descriptionField": "Fabricación de productos farmacéuticos, sustancias químicas medicinales y productos botánicos de uso farmacéutico"
+            },
+            {
+                "dataField": "2211",
+                "descriptionField": "Fabricación de llantas y neumáticos de caucho"
+            },
+            {
+                "dataField": "2212",
+                "descriptionField": "Reencauche de llantas usadas"
+            },
+            {
+                "dataField": "2219",
+                "descriptionField": "Fabricación de formas básicas de caucho y otros productos de caucho n.c.p."
+            },
+            {
+                "dataField": "2221",
+                "descriptionField": "Fabricación de formas básicas de plástico"
+            },
+            {
+                "dataField": "2229",
+                "descriptionField": "Fabricación de artículos de plástico n.c.p."
+            },
+            {
+                "dataField": "2310",
+                "descriptionField": "Fabricación de vidrio y productos de vidrio"
+            },
+            {
+                "dataField": "2391",
+                "descriptionField": "Fabricación de productos refractarios"
+            },
+            {
+                "dataField": "2392",
+                "descriptionField": "Fabricación de materiales de arcilla para la construcción"
+            },
+            {
+                "dataField": "2393",
+                "descriptionField": "Fabricación de otros productos de cerámica y porcelana"
+            },
+            {
+                "dataField": "2394",
+                "descriptionField": "Fabricación de cemento, cal y yeso"
+            },
+            {
+                "dataField": "2395",
+                "descriptionField": "Fabricación de artículos de hormigón, cemento y yeso"
+            },
+            {
+                "dataField": "2396",
+                "descriptionField": "Corte, tallado y acabado de la piedra"
+            },
+            {
+                "dataField": "2399",
+                "descriptionField": "Fabricación de otros productos minerales no metálicos n.c.p."
+            },
+            {
+                "dataField": "2410",
+                "descriptionField": "Industrias básicas de hierro y de acero"
+            },
+            {
+                "dataField": "2421",
+                "descriptionField": "Industrias básicas de metales preciosos"
+            },
+            {
+                "dataField": "2429",
+                "descriptionField": "Industrias básicas de otros metales no ferrosos"
+            },
+            {
+                "dataField": "2431",
+                "descriptionField": "Fundición de hierro y de acero"
+            },
+            {
+                "dataField": "2432",
+                "descriptionField": "Fundición de metales no ferrosos "
+            },
+            {
+                "dataField": "2511",
+                "descriptionField": "Fabricación de productos metálicos para uso estructural"
+            },
+            {
+                "dataField": "2512",
+                "descriptionField": "Fabricación de tanques, depósitos y recipientes de metal, excepto los utilizados para el envase o transporte de mercancías"
+            },
+            {
+                "dataField": "2513",
+                "descriptionField": "Fabricación de generadores de vapor, excepto calderas de agua caliente para calefacción central"
+            },
+            {
+                "dataField": "2520",
+                "descriptionField": "Fabricación de armas y municiones"
+            },
+            {
+                "dataField": "2591",
+                "descriptionField": "Forja, prensado, estampado y laminado de metal; pulvimetalurgia"
+            },
+            {
+                "dataField": "2592",
+                "descriptionField": "Tratamiento y revestimiento de metales; mecanizado"
+            },
+            {
+                "dataField": "2593",
+                "descriptionField": "Fabricación de artículos de cuchillería, herramientas de mano y artículos de ferretería"
+            },
+            {
+                "dataField": "2599",
+                "descriptionField": "Fabricación de otros productos elaborados de metal n.c.p."
+            },
+            {
+                "dataField": "2610",
+                "descriptionField": "Fabricación de componentes y tableros electrónicos"
+            },
+            {
+                "dataField": "2620",
+                "descriptionField": "Fabricación de computadoras y de equipo periférico"
+            },
+            {
+                "dataField": "2630",
+                "descriptionField": "Fabricación de equipos de comunicación"
+            },
+            {
+                "dataField": "2640",
+                "descriptionField": "Fabricación de aparatos electrónicos de consumo"
+            },
+            {
+                "dataField": "2651",
+                "descriptionField": "Fabricación de equipo de medición, prueba, navegación y control"
+            },
+            {
+                "dataField": "2652",
+                "descriptionField": "Fabricación de relojes"
+            },
+            {
+                "dataField": "2660",
+                "descriptionField": "Fabricación de equipo de irradiación y equipo electrónico de uso médico y terapéutico"
+            },
+            {
+                "dataField": "2670",
+                "descriptionField": "Fabricación de instrumentos ópticos y equipo fotográfico"
+            },
+            {
+                "dataField": "2680",
+                "descriptionField": "Fabricación de medios magnéticos y ópticos para almacenamiento de datos"
+            },
+            {
+                "dataField": "2711",
+                "descriptionField": "Fabricación de motores, generadores y transformadores eléctricos"
+            },
+            {
+                "dataField": "2712",
+                "descriptionField": "Fabricación de aparatos de distribución y control de la energía eléctrica"
+            },
+            {
+                "dataField": "2720",
+                "descriptionField": "Fabricación de pilas, baterías y acumuladores eléctricos"
+            },
+            {
+                "dataField": "2731",
+                "descriptionField": "Fabricación de hilos y cables eléctricos y de fibra óptica"
+            },
+            {
+                "dataField": "2732",
+                "descriptionField": "Fabricación de dispositivos de cableado"
+            },
+            {
+                "dataField": "2740",
+                "descriptionField": "Fabricación de equipos eléctricos de iluminación"
+            },
+            {
+                "dataField": "2750",
+                "descriptionField": "Fabricación de aparatos de uso doméstico"
+            },
+            {
+                "dataField": "2790",
+                "descriptionField": "Fabricación de otros tipos de equipo eléctrico n.c.p."
+            },
+            {
+                "dataField": "2811",
+                "descriptionField": "Fabricación de motores, turbinas, y partes para motores de combustión interna"
+            },
+            {
+                "dataField": "2812",
+                "descriptionField": "Fabricación de equipos de potencia hidráulica y neumática"
+            },
+            {
+                "dataField": "2813",
+                "descriptionField": "Fabricación de otras bombas, compresores, grifos y válvulas"
+            },
+            {
+                "dataField": "2814",
+                "descriptionField": "Fabricación de cojinetes, engranajes, trenes de engranajes y piezas de transmisión"
+            },
+            {
+                "dataField": "2815",
+                "descriptionField": "Fabricación de hornos, hogares y quemadores industriales"
+            },
+            {
+                "dataField": "2816",
+                "descriptionField": "Fabricación de equipo de elevación y manipulación"
+            },
+            {
+                "dataField": "2817",
+                "descriptionField": "Fabricación de maquinaria y equipo de oficina (excepto computadoras y equipo periférico)"
+            },
+            {
+                "dataField": "2818",
+                "descriptionField": "Fabricación de herramientas manuales con motor"
+            },
+            {
+                "dataField": "2819",
+                "descriptionField": "Fabricación de otros tipos de maquinaria y equipo de uso general n.c.p."
+            },
+            {
+                "dataField": "2821",
+                "descriptionField": "Fabricación de maquinaria agropecuaria y forestal"
+            },
+            {
+                "dataField": "2822",
+                "descriptionField": "Fabricación de máquinas formadoras de metal y de máquinas herramienta"
+            },
+            {
+                "dataField": "2823",
+                "descriptionField": "Fabricación de maquinaria para la metalurgia"
+            },
+            {
+                "dataField": "2824",
+                "descriptionField": "Fabricación de maquinaria para explotación de minas y canteras y para obras de construcción"
+            },
+            {
+                "dataField": "2825",
+                "descriptionField": "Fabricación de maquinaria para la elaboración de alimentos, bebidas y tabaco"
+            },
+            {
+                "dataField": "2826",
+                "descriptionField": "Fabricación de maquinaria para la elaboración de productos textiles, prendas de vestir y cueros"
+            },
+            {
+                "dataField": "2829",
+                "descriptionField": "Fabricación de otros tipos de maquinaria y equipo de uso especial n.c.p."
+            },
+            {
+                "dataField": "2910",
+                "descriptionField": "Fabricación de vehículos automotores y sus motores"
+            },
+            {
+                "dataField": "2920",
+                "descriptionField": "Fabricación de carrocerías para vehículos automotores; fabricación de remolques y semirremolques "
+            },
+            {
+                "dataField": "2930",
+                "descriptionField": "Fabricación de partes, piezas (autopartes) y accesorios (lujos) para vehículos automotores"
+            },
+            {
+                "dataField": "3011",
+                "descriptionField": "Construcción de barcos y de estructuras flotantes"
+            },
+            {
+                "dataField": "3012",
+                "descriptionField": "Construcción de embarcaciones de recreo y deporte"
+            },
+            {
+                "dataField": "3020",
+                "descriptionField": "Fabricación de locomotoras y de material rodante para ferrocarriles"
+            },
+            {
+                "dataField": "3030",
+                "descriptionField": "Fabricación de aeronaves, naves espaciales y de maquinaria conexa"
+            },
+            {
+                "dataField": "3040",
+                "descriptionField": "Fabricación de vehículos militares de combate"
+            },
+            {
+                "dataField": "3091",
+                "descriptionField": "Fabricación de motocicletas"
+            },
+            {
+                "dataField": "3092",
+                "descriptionField": "Fabricación de bicicletas y de sillas de ruedas para personas con discapacidad"
+            },
+            {
+                "dataField": "3099",
+                "descriptionField": "Fabricación de otros tipos de equipo de transporte n.c.p."
+            },
+            {
+                "dataField": "3110",
+                "descriptionField": "Fabricación de muebles "
+            },
+            {
+                "dataField": "3120",
+                "descriptionField": "Fabricación de colchones y somieres"
+            },
+            {
+                "dataField": "3210",
+                "descriptionField": "Fabricación de joyas, bisutería y artículos conexos"
+            },
+            {
+                "dataField": "3220",
+                "descriptionField": "Fabricación de instrumentos musicales"
+            },
+            {
+                "dataField": "3230",
+                "descriptionField": "Fabricación de artículos y equipo para la práctica del deporte"
+            },
+            {
+                "dataField": "3240",
+                "descriptionField": "Fabricación de juegos, juguetes y rompecabezas"
+            },
+            {
+                "dataField": "3250",
+                "descriptionField": "Fabricación de instrumentos, aparatos y materiales médicos y odontológicos (incluido mobiliario)"
+            },
+            {
+                "dataField": "3290",
+                "descriptionField": "Otras industrias manufactureras n.c.p."
+            },
+            {
+                "dataField": "3311",
+                "descriptionField": "Mantenimiento y reparación especializado de productos elaborados en metal"
+            },
+            {
+                "dataField": "3312",
+                "descriptionField": "Mantenimiento y reparación especializado de maquinaria y equipo"
+            },
+            {
+                "dataField": "3313",
+                "descriptionField": "Mantenimiento y reparación especializado de equipo electrónico y óptico"
+            },
+            {
+                "dataField": "3314",
+                "descriptionField": "Mantenimiento y reparación especializado de equipo eléctrico"
+            },
+            {
+                "dataField": "3315",
+                "descriptionField": "Mantenimiento y reparación especializado de equipo de transporte, excepto los vehículos automotores, motocicletas y bicicletas"
+            },
+            {
+                "dataField": "3319",
+                "descriptionField": "Mantenimiento y reparación de otros tipos de equipos y sus componentes n.c.p."
+            },
+            {
+                "dataField": "3320",
+                "descriptionField": "Instalación especializada de maquinaria y equipo industrial "
+            },
+            {
+                "dataField": "3511",
+                "descriptionField": "Generación de energía eléctrica"
+            },
+            {
+                "dataField": "3512",
+                "descriptionField": "Transmisión de energía eléctrica"
+            },
+            {
+                "dataField": "3513",
+                "descriptionField": "Distribución de energía eléctrica"
+            },
+            {
+                "dataField": "3514",
+                "descriptionField": "Comercialización de energía eléctrica"
+            },
+            {
+                "dataField": "3520",
+                "descriptionField": "Producción de gas; distribución de combustibles gaseosos por tuberías"
+            },
+            {
+                "dataField": "3530",
+                "descriptionField": "Suministro de vapor y aire acondicionado"
+            },
+            {
+                "dataField": "3600",
+                "descriptionField": "Captación, tratamiento y distribución de agua"
+            },
+            {
+                "dataField": "3700",
+                "descriptionField": "Evacuación y tratamiento de aguas residuales"
+            },
+            {
+                "dataField": "3811",
+                "descriptionField": "Recolección de desechos no peligrosos"
+            },
+            {
+                "dataField": "3812",
+                "descriptionField": "Recolección de desechos peligrosos"
+            },
+            {
+                "dataField": "3821",
+                "descriptionField": "Tratamiento y disposición de desechos no peligrosos"
+            },
+            {
+                "dataField": "3822",
+                "descriptionField": "Tratamiento y disposición de desechos peligrosos"
+            },
+            {
+                "dataField": "3830",
+                "descriptionField": "Recuperación de materiales"
+            },
+            {
+                "dataField": "3900",
+                "descriptionField": "Actividades de saneamiento ambiental y otros servicios de gestión de desechos"
+            },
+            {
+                "dataField": "4111",
+                "descriptionField": "Construcción de edificios residenciales"
+            },
+            {
+                "dataField": "4112",
+                "descriptionField": "Construcción de edificios no residenciales"
+            },
+            {
+                "dataField": "4210",
+                "descriptionField": "Construcción de carreteras y vías de ferrocarril"
+            },
+            {
+                "dataField": "4220",
+                "descriptionField": "Construcción de proyectos de servicio público"
+            },
+            {
+                "dataField": "4290",
+                "descriptionField": "Construcción de otras obras de ingeniería civil"
+            },
+            {
+                "dataField": "4311",
+                "descriptionField": "Demolición"
+            },
+            {
+                "dataField": "4312",
+                "descriptionField": "Preparación del terreno"
+            },
+            {
+                "dataField": "4321",
+                "descriptionField": "Instalaciones eléctricas"
+            },
+            {
+                "dataField": "4322",
+                "descriptionField": "Instalaciones de fontanería, calefacción y aire acondicionado"
+            },
+            {
+                "dataField": "4329",
+                "descriptionField": "Otras instalaciones especializadas"
+            },
+            {
+                "dataField": "4330",
+                "descriptionField": "Terminación y acabado de edificios y obras de ingeniería civil"
+            },
+            {
+                "dataField": "4390",
+                "descriptionField": "Otras actividades especializadas para la construcción de edificios y obras de ingeniería civil"
+            },
+            {
+                "dataField": "4511",
+                "descriptionField": "Comercio de vehículos automotores nuevos"
+            },
+            {
+                "dataField": "4512",
+                "descriptionField": "Comercio de vehículos automotores usados"
+            },
+            {
+                "dataField": "4520",
+                "descriptionField": "Mantenimiento y reparación de vehículos automotores"
+            },
+            {
+                "dataField": "4530",
+                "descriptionField": "Comercio de partes, piezas (autopartes) y accesorios (lujos) para vehículos automotores"
+            },
+            {
+                "dataField": "4541",
+                "descriptionField": "Comercio de motocicletas y de sus partes, piezas y accesorios"
+            },
+            {
+                "dataField": "4542",
+                "descriptionField": "Mantenimiento y reparación de motocicletas y de sus partes y piezas"
+            },
+            {
+                "dataField": "4610",
+                "descriptionField": "Comercio al por mayor a cambio de una retribución o por contrata"
+            },
+            {
+                "dataField": "4620",
+                "descriptionField": "Comercio al por mayor de materias primas agropecuarias; animales vivos"
+            },
+            {
+                "dataField": "4631",
+                "descriptionField": "Comercio al por mayor de productos alimenticios"
+            },
+            {
+                "dataField": "4632",
+                "descriptionField": "Comercio al por mayor de bebidas y tabaco"
+            },
+            {
+                "dataField": "4641",
+                "descriptionField": "Comercio al por mayor de productos textiles, productos confeccionados para uso doméstico"
+            },
+            {
+                "dataField": "4642",
+                "descriptionField": "Comercio al por mayor de prendas de vestir"
+            },
+            {
+                "dataField": "4643",
+                "descriptionField": "Comercio al por mayor de calzado"
+            },
+            {
+                "dataField": "4644",
+                "descriptionField": "Comercio al por mayor de aparatos y equipo de uso doméstico"
+            },
+            {
+                "dataField": "4645",
+                "descriptionField": "Comercio al por mayor de productos farmacéuticos, medicinales, cosméticos y de tocador"
+            },
+            {
+                "dataField": "4649",
+                "descriptionField": "Comercio al por mayor de otros utensilios domésticos n.c.p."
+            },
+            {
+                "dataField": "4651",
+                "descriptionField": "Comercio al por mayor de computadores, equipo periférico y programas de informática"
+            },
+            {
+                "dataField": "4652",
+                "descriptionField": "Comercio al por mayor de equipo, partes y piezas electrónicos y de telecomunicaciones"
+            },
+            {
+                "dataField": "4653",
+                "descriptionField": "Comercio al por mayor de maquinaria y equipo agropecuarios"
+            },
+            {
+                "dataField": "4659",
+                "descriptionField": "Comercio al por mayor de otros tipos de maquinaria y equipo n.c.p."
+            },
+            {
+                "dataField": "4661",
+                "descriptionField": "Comercio al por mayor de combustibles sólidos, líquidos, gaseosos y productos conexos"
+            },
+            {
+                "dataField": "4662",
+                "descriptionField": "Comercio al por mayor de metales y productos metalíferos"
+            },
+            {
+                "dataField": "4663",
+                "descriptionField": "Comercio al por mayor de materiales de construcción, artículos de ferretería, pinturas, productos de vidrio, equipo y materiales de fontanería y calefacción"
+            },
+            {
+                "dataField": "4664",
+                "descriptionField": "Comercio al por mayor de productos químicos básicos, cauchos y plásticos en formas primarias y productos químicos de uso agropecuario"
+            },
+            {
+                "dataField": "4665",
+                "descriptionField": "Comercio al por mayor de desperdicios, desechos y chatarra"
+            },
+            {
+                "dataField": "4669",
+                "descriptionField": "Comercio al por mayor de otros productos n.c.p."
+            },
+            {
+                "dataField": "4690",
+                "descriptionField": "Comercio al por mayor no especializado"
+            },
+            {
+                "dataField": "4711",
+                "descriptionField": "Comercio al por menor en establecimientos no especializados con surtido compuesto principalmente por alimentos, bebidas o tabaco"
+            },
+            {
+                "dataField": "4719",
+                "descriptionField": "Comercio al por menor en establecimientos no especializados, con surtido compuesto principalmente por productos diferentes de alimentos (víveres en general), bebidas y tabaco"
+            },
+            {
+                "dataField": "4721",
+                "descriptionField": "Comercio al por menor de productos agrícolas para el consumo en establecimientos especializados"
+            },
+            {
+                "dataField": "4722",
+                "descriptionField": "Comercio al por menor de leche, productos lácteos y huevos, en establecimientos especializados"
+            },
+            {
+                "dataField": "4723",
+                "descriptionField": "Comercio al por menor de carnes (incluye aves de corral), productos cárnicos, pescados y productos de mar, en establecimientos especializados"
+            },
+            {
+                "dataField": "4724",
+                "descriptionField": "Comercio al por menor de bebidas y productos del tabaco, en establecimientos especializados"
+            },
+            {
+                "dataField": "4729",
+                "descriptionField": "Comercio al por menor de otros productos alimenticios n.c.p., en establecimientos especializados"
+            },
+            {
+                "dataField": "4731",
+                "descriptionField": "Comercio al por menor de combustible para automotores"
+            },
+            {
+                "dataField": "4732",
+                "descriptionField": "Comercio al por menor de lubricantes (aceites, grasas), aditivos y productos de limpieza para vehículos automotores"
+            },
+            {
+                "dataField": "4741",
+                "descriptionField": "Comercio al por menor de computadores, equipos periféricos, programas de informática y equipos de telecomunicaciones en establecimientos especializados"
+            },
+            {
+                "dataField": "4742",
+                "descriptionField": "Comercio al por menor de equipos y aparatos de sonido y de video, en establecimientos especializados"
+            },
+            {
+                "dataField": "4751",
+                "descriptionField": "Comercio al por menor de productos textiles en establecimientos especializados"
+            },
+            {
+                "dataField": "4752",
+                "descriptionField": "Comercio al por menor de artículos de ferretería, pinturas y productos de vidrio en establecimientos especializados"
+            },
+            {
+                "dataField": "4753",
+                "descriptionField": "Comercio al por menor de tapices, alfombras y cubrimientos para paredes y pisos en establecimientos especializados"
+            },
+            {
+                "dataField": "4754",
+                "descriptionField": "Comercio al por menor de electrodomésticos y gasodomésticos de uso doméstico, muebles y equipos de iluminación"
+            },
+            {
+                "dataField": "4755",
+                "descriptionField": "Comercio al por menor de artículos y utensilios de uso doméstico"
+            },
+            {
+                "dataField": "4759",
+                "descriptionField": "Comercio al por menor de otros artículos domésticos en establecimientos especializados"
+            },
+            {
+                "dataField": "4761",
+                "descriptionField": "Comercio al por menor de libros, periódicos, materiales y artículos de papelería y escritorio, en establecimientos especializados"
+            },
+            {
+                "dataField": "4762",
+                "descriptionField": "Comercio al por menor de artículos deportivos, en establecimientos especializados "
+            },
+            {
+                "dataField": "4769",
+                "descriptionField": "Comercio al por menor de otros artículos culturales y de entretenimiento n.c.p. en establecimientos especializados"
+            },
+            {
+                "dataField": "4771",
+                "descriptionField": "Comercio al por menor de prendas de vestir y sus accesorios (incluye artículos de piel) en establecimientos especializados"
+            },
+            {
+                "dataField": "4772",
+                "descriptionField": "Comercio al por menor de todo tipo de calzado y artículos de cuero y sucedáneos del cuero en establecimientos especializados."
+            },
+            {
+                "dataField": "4773",
+                "descriptionField": "Comercio al por menor de productos farmacéuticos y medicinales, cosméticos y artículos de tocador en establecimientos especializados"
+            },
+            {
+                "dataField": "4774",
+                "descriptionField": "Comercio al por menor de otros productos nuevos en establecimientos especializados"
+            },
+            {
+                "dataField": "4775",
+                "descriptionField": "Comercio al por menor de artículos de segunda mano"
+            },
+            {
+                "dataField": "4781",
+                "descriptionField": "Comercio al por menor de alimentos, bebidas y tabaco, en puestos de venta móviles"
+            },
+            {
+                "dataField": "4782",
+                "descriptionField": "Comercio al por menor de productos textiles, prendas de vestir y calzado, en puestos de venta móviles"
+            },
+            {
+                "dataField": "4789",
+                "descriptionField": "Comercio al por menor de otros productos en puestos de venta móviles"
+            },
+            {
+                "dataField": "4791",
+                "descriptionField": "Comercio al por menor realizado a través de Internet"
+            },
+            {
+                "dataField": "4792",
+                "descriptionField": "Comercio al por menor realizado a través de casas de venta o por correo"
+            },
+            {
+                "dataField": "4799",
+                "descriptionField": "Otros tipos de comercio al por menor no realizado en establecimientos, puestos de venta o mercados."
+            },
+            {
+                "dataField": "4911",
+                "descriptionField": "Transporte férreo de pasajeros"
+            },
+            {
+                "dataField": "4912",
+                "descriptionField": "Transporte férreo de carga "
+            },
+            {
+                "dataField": "4921",
+                "descriptionField": "Transporte de pasajeros"
+            },
+            {
+                "dataField": "4922",
+                "descriptionField": "Transporte mixto"
+            },
+            {
+                "dataField": "4923",
+                "descriptionField": "Transporte de carga por carretera"
+            },
+            {
+                "dataField": "4930",
+                "descriptionField": "Transporte por tuberías"
+            },
+            {
+                "dataField": "5011",
+                "descriptionField": "Transporte de pasajeros marítimo y de cabotaje "
+            },
+            {
+                "dataField": "5012",
+                "descriptionField": "Transporte de carga marítimo y de cabotaje "
+            },
+            {
+                "dataField": "5021",
+                "descriptionField": "Transporte fluvial de pasajeros"
+            },
+            {
+                "dataField": "5022",
+                "descriptionField": "Transporte fluvial de carga"
+            },
+            {
+                "dataField": "5111",
+                "descriptionField": "Transporte aéreo nacional de pasajeros "
+            },
+            {
+                "dataField": "5112",
+                "descriptionField": "Transporte aéreo internacional de pasajeros "
+            },
+            {
+                "dataField": "5121",
+                "descriptionField": "Transporte aéreo nacional de carga "
+            },
+            {
+                "dataField": "5122",
+                "descriptionField": "Transporte aéreo internacional de carga "
+            },
+            {
+                "dataField": "5210",
+                "descriptionField": "Almacenamiento y depósito"
+            },
+            {
+                "dataField": "5221",
+                "descriptionField": "Actividades de estaciones, vías y servicios complementarios para el transporte terrestre"
+            },
+            {
+                "dataField": "5222",
+                "descriptionField": "Actividades de puertos y servicios complementarios para el transporte acuático"
+            },
+            {
+                "dataField": "5223",
+                "descriptionField": "Actividades de aeropuertos, servicios de navegación aérea y demás actividades conexas al transporte aéreo"
+            },
+            {
+                "dataField": "5224",
+                "descriptionField": "Manipulación de carga"
+            },
+            {
+                "dataField": "5229",
+                "descriptionField": "Otras actividades complementarias al transporte"
+            },
+            {
+                "dataField": "5310",
+                "descriptionField": "Actividades postales nacionales"
+            },
+            {
+                "dataField": "5320",
+                "descriptionField": "Actividades de mensajería"
+            },
+            {
+                "dataField": "5511",
+                "descriptionField": "Alojamiento en hoteles "
+            },
+            {
+                "dataField": "5512",
+                "descriptionField": "Alojamiento en apartahoteles"
+            },
+            {
+                "dataField": "5513",
+                "descriptionField": "Alojamiento en centros vacacionales "
+            },
+            {
+                "dataField": "5514",
+                "descriptionField": "Alojamiento rural"
+            },
+            {
+                "dataField": "5519",
+                "descriptionField": "Otros tipos de alojamientos para visitantes"
+            },
+            {
+                "dataField": "5520",
+                "descriptionField": "Actividades de zonas de camping y parques para vehículos recreacionales"
+            },
+            {
+                "dataField": "5530",
+                "descriptionField": "Servicio por horas "
+            },
+            {
+                "dataField": "5590",
+                "descriptionField": "Otros tipos de alojamiento n.c.p."
+            },
+            {
+                "dataField": "5611",
+                "descriptionField": "Expendio a la mesa de comidas preparadas"
+            },
+            {
+                "dataField": "5612",
+                "descriptionField": "Expendio por autoservicio de comidas preparadas"
+            },
+            {
+                "dataField": "5613",
+                "descriptionField": "Expendio de comidas preparadas en cafeterías"
+            },
+            {
+                "dataField": "5619",
+                "descriptionField": "Otros tipos de expendio de comidas preparadas n.c.p."
+            },
+            {
+                "dataField": "5621",
+                "descriptionField": "Catering para eventos"
+            },
+            {
+                "dataField": "5629",
+                "descriptionField": "Actividades de otros servicios de comidas"
+            },
+            {
+                "dataField": "5630",
+                "descriptionField": "Expendio de bebidas alcohólicas para el consumo dentro del establecimiento"
+            },
+            {
+                "dataField": "5811",
+                "descriptionField": "Edición de libros"
+            },
+            {
+                "dataField": "5812",
+                "descriptionField": "Edición de directorios y listas de correo"
+            },
+            {
+                "dataField": "5813",
+                "descriptionField": "Edición de periódicos, revistas y otras publicaciones periódicas"
+            },
+            {
+                "dataField": "5819",
+                "descriptionField": "Otros trabajos de edición"
+            },
+            {
+                "dataField": "5820",
+                "descriptionField": "Edición de programas de informática (software)"
+            },
+            {
+                "dataField": "5911",
+                "descriptionField": "Actividades de producción de películas cinematográficas, videos, programas, anuncios y comerciales de televisión"
+            },
+            {
+                "dataField": "5912",
+                "descriptionField": "Actividades de posproducción de películas cinematográficas, videos, programas, anuncios y comerciales de televisión"
+            },
+            {
+                "dataField": "5913",
+                "descriptionField": "Actividades de distribución de películas cinematográficas, videos, programas, anuncios y comerciales de televisión"
+            },
+            {
+                "dataField": "5914",
+                "descriptionField": "Actividades de exhibición de películas cinematográficas y videos"
+            },
+            {
+                "dataField": "5920",
+                "descriptionField": "Actividades de grabación de sonido y edición de música"
+            },
+            {
+                "dataField": "6010",
+                "descriptionField": "Actividades de programación y transmisión en el servicio de radiodifusión sonora"
+            },
+            {
+                "dataField": "6020",
+                "descriptionField": "Actividades de programación y transmisión de televisión"
+            },
+            {
+                "dataField": "6110",
+                "descriptionField": "Actividades de telecomunicaciones alámbricas"
+            },
+            {
+                "dataField": "6120",
+                "descriptionField": "Actividades de telecomunicaciones inalámbricas"
+            },
+            {
+                "dataField": "6130",
+                "descriptionField": "Actividades de telecomunicación satelital"
+            },
+            {
+                "dataField": "6190",
+                "descriptionField": "Otras actividades de telecomunicaciones"
+            },
+            {
+                "dataField": "6201",
+                "descriptionField": "Actividades de desarrollo de sistemas informáticos (planificación, análisis, diseño, programación, pruebas)"
+            },
+            {
+                "dataField": "6202",
+                "descriptionField": "Actividades de consultoría informática y actividades de administración de instalaciones informáticas"
+            },
+            {
+                "dataField": "6209",
+                "descriptionField": "Otras actividades de tecnologías de información y actividades de servicios informáticos"
+            },
+            {
+                "dataField": "6311",
+                "descriptionField": "Procesamiento de datos, alojamiento (hosting) y actividades relacionadas"
+            },
+            {
+                "dataField": "6312",
+                "descriptionField": "Portales web"
+            },
+            {
+                "dataField": "6391",
+                "descriptionField": "Actividades de agencias de noticias"
+            },
+            {
+                "dataField": "6399",
+                "descriptionField": "Otras actividades de servicio de información n.c.p."
+            },
+            {
+                "dataField": "6411",
+                "descriptionField": "Banco Central"
+            },
+            {
+                "dataField": "6412",
+                "descriptionField": "Bancos comerciales"
+            },
+            {
+                "dataField": "6421",
+                "descriptionField": "Actividades de las corporaciones financieras"
+            },
+            {
+                "dataField": "6422",
+                "descriptionField": "Actividades de las compañías de financiamiento"
+            },
+            {
+                "dataField": "6423",
+                "descriptionField": "Banca de segundo piso"
+            },
+            {
+                "dataField": "6424",
+                "descriptionField": "Actividades de las cooperativas financieras"
+            },
+            {
+                "dataField": "6431",
+                "descriptionField": "Fideicomisos, fondos y entidades financieras similares"
+            },
+            {
+                "dataField": "6432",
+                "descriptionField": "Fondos de cesantías"
+            },
+            {
+                "dataField": "6491",
+                "descriptionField": "Leasing financiero (arrendamiento financiero)"
+            },
+            {
+                "dataField": "6492",
+                "descriptionField": "Actividades financieras de fondos de empleados y otras formas asociativas del sector solidario"
+            },
+            {
+                "dataField": "6493",
+                "descriptionField": "Actividades de compra de cartera o factoring"
+            },
+            {
+                "dataField": "6494",
+                "descriptionField": "Otras actividades de distribución de fondos"
+            },
+            {
+                "dataField": "6495",
+                "descriptionField": "Instituciones especiales oficiales"
+            },
+            {
+                "dataField": "6499",
+                "descriptionField": "Otras actividades de servicio financiero, excepto las de seguros y pensiones n.c.p."
+            },
+            {
+                "dataField": "6511",
+                "descriptionField": "Seguros generales "
+            },
+            {
+                "dataField": "6512",
+                "descriptionField": "Seguros de vida"
+            },
+            {
+                "dataField": "6513",
+                "descriptionField": "Reaseguros"
+            },
+            {
+                "dataField": "6514",
+                "descriptionField": "Capitalización"
+            },
+            {
+                "dataField": "6521",
+                "descriptionField": "Servicios de seguros sociales de salud"
+            },
+            {
+                "dataField": "6522",
+                "descriptionField": "Servicios de seguros sociales de riesgos profesionales"
+            },
+            {
+                "dataField": "6531",
+                "descriptionField": "Régimen de prima media con prestación definida (RPM)"
+            },
+            {
+                "dataField": "6532",
+                "descriptionField": "Régimen de ahorro individual (RAI)"
+            },
+            {
+                "dataField": "6611",
+                "descriptionField": "Administración de mercados financieros"
+            },
+            {
+                "dataField": "6612",
+                "descriptionField": "Corretaje de valores y de contratos de productos básicos"
+            },
+            {
+                "dataField": "6613",
+                "descriptionField": "Otras actividades relacionadas con el mercado de valores"
+            },
+            {
+                "dataField": "6614",
+                "descriptionField": "Actividades de las casas de cambio"
+            },
+            {
+                "dataField": "6615",
+                "descriptionField": "Actividades de los profesionales de compra y venta de divisas"
+            },
+            {
+                "dataField": "6619",
+                "descriptionField": "Otras actividades auxiliares de las actividades de servicios financieros n.c.p."
+            },
+            {
+                "dataField": "6621",
+                "descriptionField": "Actividades de agentes y corredores de seguros"
+            },
+            {
+                "dataField": "6629",
+                "descriptionField": "Evaluación de riesgos y daños, y otras actividades de servicios auxiliares"
+            },
+            {
+                "dataField": "6630",
+                "descriptionField": "Actividades de administración de fondos"
+            },
+            {
+                "dataField": "6810",
+                "descriptionField": "Actividades inmobiliarias realizadas con bienes propios o arrendados"
+            },
+            {
+                "dataField": "6820",
+                "descriptionField": "Actividades inmobiliarias realizadas a cambio de una retribución o por contrata "
+            },
+            {
+                "dataField": "6910",
+                "descriptionField": "Actividades jurídicas"
+            },
+            {
+                "dataField": "6920",
+                "descriptionField": "Actividades de contabilidad, teneduría de libros, auditoría financiera y asesoría tributaria"
+            },
+            {
+                "dataField": "7010",
+                "descriptionField": "Actividades de administración empresarial"
+            },
+            {
+                "dataField": "7020",
+                "descriptionField": "Actividades de consultaría de gestión"
+            },
+            {
+                "dataField": "7110",
+                "descriptionField": "Actividades de arquitectura e ingeniería y otras actividades conexas de consultoría técnica"
+            },
+            {
+                "dataField": "7120",
+                "descriptionField": "Ensayos y análisis técnicos"
+            },
+            {
+                "dataField": "7210",
+                "descriptionField": "Investigaciones y desarrollo experimental en el campo de las ciencias naturales y la ingeniería "
+            },
+            {
+                "dataField": "7220",
+                "descriptionField": "Investigaciones y desarrollo experimental en el campo de las ciencias sociales y las humanidades"
+            },
+            {
+                "dataField": "7310",
+                "descriptionField": "Publicidad"
+            },
+            {
+                "dataField": "7320",
+                "descriptionField": "Estudios de mercado y realización de encuestas de opinión pública"
+            },
+            {
+                "dataField": "7410",
+                "descriptionField": "Actividades especializadas de diseño "
+            },
+            {
+                "dataField": "7420",
+                "descriptionField": "Actividades de fotografía"
+            },
+            {
+                "dataField": "7490",
+                "descriptionField": "Otras actividades profesionales, científicas y técnicas n.c.p."
+            },
+            {
+                "dataField": "7500",
+                "descriptionField": "Actividades veterinarias"
+            },
+            {
+                "dataField": "7710",
+                "descriptionField": "Alquiler y arrendamiento de vehículos automotores"
+            },
+            {
+                "dataField": "7721",
+                "descriptionField": "Alquiler y arrendamiento de equipo recreativo y deportivo"
+            },
+            {
+                "dataField": "7722",
+                "descriptionField": "Alquiler de videos y discos "
+            },
+            {
+                "dataField": "7729",
+                "descriptionField": "Alquiler y arrendamiento de otros efectos personales y enseres domésticos n.c.p."
+            },
+            {
+                "dataField": "7730",
+                "descriptionField": "Alquiler y arrendamiento de otros tipos de maquinaria, equipo y bienes tangibles n.c.p."
+            },
+            {
+                "dataField": "7740",
+                "descriptionField": "Arrendamiento de propiedad intelectual y productos similares, excepto obras protegidas por derechos de autor"
+            },
+            {
+                "dataField": "7810",
+                "descriptionField": "Actividades de agencias de empleo"
+            },
+            {
+                "dataField": "7820",
+                "descriptionField": "Actividades de agencias de empleo temporal"
+            },
+            {
+                "dataField": "7830",
+                "descriptionField": "Otras actividades de suministro de recurso humano"
+            },
+            {
+                "dataField": "7911",
+                "descriptionField": "Actividades de las agencias de viaje"
+            },
+            {
+                "dataField": "7912",
+                "descriptionField": "Actividades de operadores turísticos"
+            },
+            {
+                "dataField": "7990",
+                "descriptionField": "Otros servicios de reserva y actividades relacionadas"
+            },
+            {
+                "dataField": "8010",
+                "descriptionField": "Actividades de seguridad privada"
+            },
+            {
+                "dataField": "8020",
+                "descriptionField": "Actividades de servicios de sistemas de seguridad"
+            },
+            {
+                "dataField": "8030",
+                "descriptionField": "Actividades de detectives e investigadores privados"
+            },
+            {
+                "dataField": "8110",
+                "descriptionField": "Actividades combinadas de apoyo a instalaciones"
+            },
+            {
+                "dataField": "8121",
+                "descriptionField": "Limpieza general interior de edificios"
+            },
+            {
+                "dataField": "8129",
+                "descriptionField": "Otras actividades de limpieza de edificios e instalaciones industriales"
+            },
+            {
+                "dataField": "8130",
+                "descriptionField": "Actividades de paisajismo y servicios de mantenimiento conexos"
+            },
+            {
+                "dataField": "8211",
+                "descriptionField": "Actividades combinadas de servicios administrativos de oficina"
+            },
+            {
+                "dataField": "8219",
+                "descriptionField": "Fotocopiado, preparación de documentos y otras actividades especializadas de apoyo a oficina"
+            },
+            {
+                "dataField": "8220",
+                "descriptionField": "Actividades de centros de llamadas (Call center)"
+            },
+            {
+                "dataField": "8230",
+                "descriptionField": "Organización de convenciones y eventos comerciales"
+            },
+            {
+                "dataField": "8291",
+                "descriptionField": "Actividades de agencias de cobranza y oficinas de calificación crediticia"
+            },
+            {
+                "dataField": "8292",
+                "descriptionField": "Actividades de envase y empaque"
+            },
+            {
+                "dataField": "8299",
+                "descriptionField": "Otras actividades de servicio de apoyo a las empresas n.c.p."
+            },
+            {
+                "dataField": "8411",
+                "descriptionField": "Actividades legislativas de la administración pública"
+            },
+            {
+                "dataField": "8412",
+                "descriptionField": "Actividades ejecutivas de la administración pública"
+            },
+            {
+                "dataField": "8413",
+                "descriptionField": "Regulación de las actividades de organismos que prestan servicios de salud, educativos, culturales y otros servicios sociales, excepto servicios de seguridad social "
+            },
+            {
+                "dataField": "8414",
+                "descriptionField": "Actividades reguladoras y facilitadoras de la actividad económica"
+            },
+            {
+                "dataField": "8415",
+                "descriptionField": "Actividades de los otros órganos de control"
+            },
+            {
+                "dataField": "8421",
+                "descriptionField": "Relaciones exteriores "
+            },
+            {
+                "dataField": "8422",
+                "descriptionField": "Actividades de defensa"
+            },
+            {
+                "dataField": "8423",
+                "descriptionField": "Orden público y actividades de seguridad"
+            },
+            {
+                "dataField": "8424",
+                "descriptionField": "Administración de justicia"
+            },
+            {
+                "dataField": "8430",
+                "descriptionField": "Actividades de planes de seguridad social de afiliación obligatoria"
+            },
+            {
+                "dataField": "8511",
+                "descriptionField": "Educación de la primera infancia"
+            },
+            {
+                "dataField": "8512",
+                "descriptionField": "Educación preescolar"
+            },
+            {
+                "dataField": "8513",
+                "descriptionField": "Educación básica primaria"
+            },
+            {
+                "dataField": "8521",
+                "descriptionField": "Educación básica secundaria "
+            },
+            {
+                "dataField": "8522",
+                "descriptionField": "Educación media académica"
+            },
+            {
+                "dataField": "8523",
+                "descriptionField": "Educación media técnica y de formación laboral"
+            },
+            {
+                "dataField": "8530",
+                "descriptionField": "Establecimientos que combinan diferentes niveles de educación "
+            },
+            {
+                "dataField": "8541",
+                "descriptionField": "Educación técnica profesional"
+            },
+            {
+                "dataField": "8542",
+                "descriptionField": "Educación tecnológica"
+            },
+            {
+                "dataField": "8543",
+                "descriptionField": "Educación de instituciones universitarias o de escuelas tecnológicas"
+            },
+            {
+                "dataField": "8544",
+                "descriptionField": "Educación de universidades"
+            },
+            {
+                "dataField": "8551",
+                "descriptionField": "Formación académica no formal "
+            },
+            {
+                "dataField": "8552",
+                "descriptionField": "Enseñanza deportiva y recreativa"
+            },
+            {
+                "dataField": "8553",
+                "descriptionField": "Enseñanza cultural"
+            },
+            {
+                "dataField": "8559",
+                "descriptionField": "Otros tipos de educación n.c.p."
+            },
+            {
+                "dataField": "8560",
+                "descriptionField": "Actividades de apoyo a la educación"
+            },
+            {
+                "dataField": "8610",
+                "descriptionField": "Actividades de hospitales y clínicas, con internación"
+            },
+            {
+                "dataField": "8621",
+                "descriptionField": "Actividades de la práctica médica, sin internación"
+            },
+            {
+                "dataField": "8622",
+                "descriptionField": "Actividades de la práctica odontológica"
+            },
+            {
+                "dataField": "8691",
+                "descriptionField": "Actividades de apoyo diagnóstico"
+            },
+            {
+                "dataField": "8692",
+                "descriptionField": "Actividades de apoyo terapéutico"
+            },
+            {
+                "dataField": "8699",
+                "descriptionField": "Otras actividades de atención de la salud humana"
+            },
+            {
+                "dataField": "8710",
+                "descriptionField": "Actividades de atención residencial medicalizada de tipo general"
+            },
+            {
+                "dataField": "8720",
+                "descriptionField": "Actividades de atención residencial, para el cuidado de pacientes con retardo mental, enfermedad mental y consumo de sustancias psicoactivas"
+            },
+            {
+                "dataField": "8730",
+                "descriptionField": "Actividades de atención en instituciones para el cuidado de personas mayores y/o discapacitadas"
+            },
+            {
+                "dataField": "8790",
+                "descriptionField": "Otras actividades de atención en instituciones con alojamiento"
+            },
+            {
+                "dataField": "8810",
+                "descriptionField": "Actividades de asistencia social sin alojamiento para personas mayores y discapacitadas"
+            },
+            {
+                "dataField": "8890",
+                "descriptionField": "Otras actividades de asistencia social sin alojamiento"
+            },
+            {
+                "dataField": "9001",
+                "descriptionField": "Creación literaria"
+            },
+            {
+                "dataField": "9002",
+                "descriptionField": "Creación musical"
+            },
+            {
+                "dataField": "9003",
+                "descriptionField": "Creación teatral"
+            },
+            {
+                "dataField": "9004",
+                "descriptionField": "Creación audiovisual"
+            },
+            {
+                "dataField": "9005",
+                "descriptionField": "Artes plásticas y visuales"
+            },
+            {
+                "dataField": "9006",
+                "descriptionField": "Actividades teatrales"
+            },
+            {
+                "dataField": "9007",
+                "descriptionField": "Actividades de espectáculos musicales en vivo"
+            },
+            {
+                "dataField": "9008",
+                "descriptionField": "Otras actividades de espectáculos en vivo"
+            },
+            {
+                "dataField": "9101",
+                "descriptionField": "Actividades de bibliotecas y archivos"
+            },
+            {
+                "dataField": "9102",
+                "descriptionField": "Actividades y funcionamiento de museos, conservación de edificios y sitios históricos"
+            },
+            {
+                "dataField": "9103",
+                "descriptionField": "Actividades de jardines botánicos, zoológicos y reservas naturales"
+            },
+            {
+                "dataField": "9200",
+                "descriptionField": "Actividades de juegos de azar y apuestas"
+            },
+            {
+                "dataField": "9311",
+                "descriptionField": "Gestión de instalaciones deportivas"
+            },
+            {
+                "dataField": "9312",
+                "descriptionField": "Actividades de clubes deportivos"
+            },
+            {
+                "dataField": "9319",
+                "descriptionField": "Otras actividades deportivas"
+            },
+            {
+                "dataField": "9321",
+                "descriptionField": "Actividades de parques de atracciones y parques temáticos"
+            },
+            {
+                "dataField": "9329",
+                "descriptionField": "Otras actividades recreativas y de esparcimiento n.c.p."
+            },
+            {
+                "dataField": "9411",
+                "descriptionField": "Actividades de asociaciones empresariales y de empleadores"
+            },
+            {
+                "dataField": "9412",
+                "descriptionField": "Actividades de asociaciones profesionales"
+            },
+            {
+                "dataField": "9420",
+                "descriptionField": "Actividades de sindicatos de empleados"
+            },
+            {
+                "dataField": "9491",
+                "descriptionField": "Actividades de asociaciones religiosas"
+            },
+            {
+                "dataField": "9492",
+                "descriptionField": "Actividades de asociaciones políticas"
+            },
+            {
+                "dataField": "9499",
+                "descriptionField": "Actividades de otras asociaciones n.c.p."
+            },
+            {
+                "dataField": "9511",
+                "descriptionField": "Mantenimiento y reparación de computadores y de equipo periférico"
+            },
+            {
+                "dataField": "9512",
+                "descriptionField": "Mantenimiento y reparación de equipos de comunicación"
+            },
+            {
+                "dataField": "9521",
+                "descriptionField": "Mantenimiento y reparación de aparatos electrónicos de consumo"
+            },
+            {
+                "dataField": "9522",
+                "descriptionField": "Mantenimiento y reparación de aparatos y equipos domésticos y de jardinería "
+            },
+            {
+                "dataField": "9523",
+                "descriptionField": "Reparación de calzado y artículos de cuero"
+            },
+            {
+                "dataField": "9524",
+                "descriptionField": "Reparación de muebles y accesorios para el hogar"
+            },
+            {
+                "dataField": "9529",
+                "descriptionField": "Mantenimiento y reparación de otros efectos personales y enseres domésticos"
+            },
+            {
+                "dataField": "9601",
+                "descriptionField": "Lavado y limpieza, incluso la limpieza en seco, de productos textiles y de piel"
+            },
+            {
+                "dataField": "9602",
+                "descriptionField": "Peluquería y otros tratamientos de belleza"
+            },
+            {
+                "dataField": "9603",
+                "descriptionField": "Pompas fúnebres y actividades relacionadas"
+            },
+            {
+                "dataField": "9609",
+                "descriptionField": "Otras actividades de servicios personales n.c.p."
+            },
+            {
+                "dataField": "9700",
+                "descriptionField": "Actividades de los hogares individuales como empleadores de personal doméstico"
+            },
+            {
+                "dataField": "9810",
+                "descriptionField": "Actividades no diferenciadas de los hogares individuales como productores de bienes para uso propio"
+            },
+            {
+                "dataField": "9820",
+                "descriptionField": "Actividades no diferenciadas de los hogares individuales como productores de servicios para uso propio"
+            },
+            {
+                "dataField": "9900",
+                "descriptionField": "Actividades de organizaciones y entidades extraterritoriales"
+            }
+        ]
+    }
+}
