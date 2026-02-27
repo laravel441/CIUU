@@ -4,6 +4,11 @@ from fastapi.responses import FileResponse, Response
 from twilio.twiml.messaging_response import MessagingResponse
 import requests
 import os
+import urllib3
+
+# Desactivar advertencias de SSL inseguro (InsecureRequestWarning)
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 
 app = FastAPI()
 
