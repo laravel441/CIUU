@@ -97,7 +97,19 @@ def obtener_datos_claro():
 
     except requests.exceptions.RequestException as e:
         print(f"DEBUG: Error en consulta API: {str(e)}")
-        raise HTTPException(status_code=502, detail=f"Error al consultar la API: {str(e)}")
+        
+        # Fallback: Intentar cargar desde el cache local si la API falla
+        cache_file = "data/api_cache.json"
+        if os.path.exists(cache_file):
+            print(f"DEBUG: Cargando datos de respaldo desde {cache_file}")
+            try:
+                import json
+                with open(cache_file, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception as e_cache:
+                print(f"DEBUG: Error cargando cache: {e_cache}")
+        
+        raise HTTPException(status_code=502, detail=f"Error al consultar la API y no hay cache disponible: {str(e)}")
 
 
 @app.get("/api/data")
