@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Claro - Actividades Económicas</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-section">
+                <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                        fill="#da291c" />
+                    <path
+                        d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                        fill="white" />
+                </svg>
+                <h1>Actividades Económicas</h1>
+            </div>
+            <p class="subtitle">Consulta de códigos de actividad comercial en tiempo real desde APIM Calidad Claro.</p>
+            <div style="margin-top: 1.5rem;">
+                <div class="status-badge" id="statusBadge">Conectando servicio...</div>
+            </div>
+        </header>
+
+        <main class="card">
+            <section class="search-container">
+                <div class="search-wrapper">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="searchInput" class="search-input"
+                        placeholder="Buscar por código (ej. 0111) o palabra clave...">
+                </div>
+            </section>
+
+            <div class="table-viewport">
+                <table id="dataTable" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Content dynamic -->
+                    </tbody>
+                </table>
+
+                <!-- Skeleton Loader -->
+                <div id="loader" class="loader-content">
+                    <div class="skeleton-row"></div>
+                    <div class="skeleton-row"></div>
+                    <div class="skeleton-row"></div>
+                </div>
+
+                <!-- Error State -->
+                <div id="errorContainer" style="display: none; padding: 3rem; text-align: center;">
+                    <h3 style="color: var(--error); margin-bottom: 0.5rem;">Error de conexión</h3>
+                    <p id="errorMessage" style="color: var(--text-secondary); margin-bottom: 1.5rem;"></p>
+                    <button class="retry-btn" onclick="fetchData()"
+                        style="padding: 0.6rem 1.5rem; background: var(--primary); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">Reintentar</button>
+                </div>
+
+                <!-- Empty State -->
+                <div id="emptyState" style="display: none; padding: 4rem 2rem; text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
+                    <p style="color: var(--text-secondary); font-size: 1.1rem; font-weight: 500;">No se encontraron
+                        coincidencias.</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Prueba con otro código o descripción básica.
+                    </p>
+                </div>
+
+                <div id="welcomeMessage" style="padding: 4rem 2rem; text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">👋</div>
+                    <p style="color: var(--text-secondary); font-size: 1.1rem; font-weight: 500;">Bienvenido al portal.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Ingresa un término arriba para comenzar la
+                        búsqueda.</p>
+                </div>
+            </div>
+
+            <footer class="card-footer">
+                <span id="rowCount">Listo para buscar</span>
+                <span>APIM v2.4</span>
+            </footer>
+        </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+
+</html>

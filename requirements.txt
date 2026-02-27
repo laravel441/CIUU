@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+requests
+twilio
+python-multipart
+# aiofiles (needed for StaticFiles and FileResponse)
+aiofiles
