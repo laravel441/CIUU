@@ -39,6 +39,7 @@ async function fetchData() {
         }
 
         const responseData = await response.json();
+        const source = responseData.source || 'unknown';
 
         // Extract information from the expected path
         let data = [];
@@ -49,7 +50,7 @@ async function fetchData() {
         } else {
             // Fallback for different response formats
             for (const key in responseData) {
-                if (Array.isArray(responseData[key])) {
+                if (key !== "source" && Array.isArray(responseData[key])) {
                     data = responseData[key];
                     break;
                 }
@@ -65,8 +66,19 @@ async function fetchData() {
         // Initialize UI after loading data
         loader.style.display = 'none';
         welcomeMessage.style.display = 'block';
-        statusBadge.textContent = 'Servicio Activo';
-        statusBadge.classList.add('success');
+
+        if (source === 'live') {
+            statusBadge.innerHTML = '<span class="pulse-dot"></span> API en Vivo';
+            statusBadge.classList.add('success');
+        } else if (source === 'cache') {
+            statusBadge.innerHTML = '⚠️ Modo Local (Datos de Respaldo)';
+            statusBadge.classList.add('warning');
+            statusBadge.style.background = 'rgba(255, 152, 0, 0.2)';
+            statusBadge.style.color = '#ffb74d';
+        } else {
+            statusBadge.textContent = 'Servicio Activo';
+            statusBadge.classList.add('success');
+        }
 
     } catch (error) {
         console.error('Error fetching data:', error);

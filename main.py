@@ -105,7 +105,10 @@ def obtener_datos_claro():
             try:
                 import json
                 with open(cache_file, "r", encoding="utf-8") as f:
-                    return json.load(f)
+                    data = json.load(f)
+                    if isinstance(data, dict):
+                        data["source"] = "cache"
+                    return data
             except Exception as e_cache:
                 print(f"DEBUG: Error cargando cache: {e_cache}")
         
@@ -114,8 +117,17 @@ def obtener_datos_claro():
 
 @app.get("/api/data")
 def get_api_data():
-    """Endpoint HTTP para el frontend"""
-    return obtener_datos_claro()
+    """Endpoint HTTP para el frontend con señalización de origen"""
+    try:
+        data = obtener_datos_claro()
+        # Si la respuesta ya tiene 'source', la respetamos (viene del fallback)
+        if isinstance(data, dict) and "source" not in data:
+            data["source"] = "live"
+        return data
+    except Exception as e:
+        # Esto no debería ocurrir mucho ahora con el fallback interno, 
+        # pero por si acaso devolvemos error estructurado
+        raise HTTPException(status_code=502, detail=str(e))
 
 
 @app.post("/webhook/whatsapp")
