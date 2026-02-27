@@ -29,14 +29,20 @@ def obtener_datos_claro():
         "grant_type": "client_credentials"
     }
     
+    headers_auth = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+        "Accept": "application/json, text/plain, */*",
+        "Accept-Language": "en-US,en;q=0.9"
+    }
+
     try:
         # Intentamos primero con data= (form-urlencoded) que es el estándar OAuth2
-        respuesta_auth = requests.post(url_auth, data=datos_auth, verify=False, timeout=10)
+        respuesta_auth = requests.post(url_auth, data=datos_auth, headers=headers_auth, verify=False, timeout=10)
         
         # Si falla con 4xx o 5xx, intentamos con json= por si la API lo requiere
         if respuesta_auth.status_code != 200:
             print(f"DEBUG: Auth con form-data falló ({respuesta_auth.status_code}). Intentando con JSON...")
-            respuesta_auth_json = requests.post(url_auth, json=datos_auth, verify=False, timeout=10)
+            respuesta_auth_json = requests.post(url_auth, json=datos_auth, headers=headers_auth, verify=False, timeout=10)
             if respuesta_auth_json.status_code == 200:
                 respuesta_auth = respuesta_auth_json
         
