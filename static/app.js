@@ -87,18 +87,28 @@ async function searchByNIT() {
 
             // Helper to find value from possible keys
             const getVal = (obj, keys, fallback = '(No disponible)') => {
+                // Si obj es un array, buscar dentro de sus elementos (algunas APIs devuelven arrays de pares clave-valor)
+                if (Array.isArray(obj)) {
+                    for (const item of obj) {
+                        for (const k of keys) {
+                            if (item.parameter === k || item.key === k || item.id === k) return item.descField || item.value || item.text;
+                        }
+                    }
+                }
+
+                // Búsqueda estándar en objeto
                 for (const k of keys) {
-                    if (obj[k]) return obj[k];
+                    if (obj[k] !== undefined && obj[k] !== null && obj[k] !== "") return obj[k];
                 }
                 return fallback;
             };
 
-            const nitValue = getVal(d, ['nit', 'nitClient', 'nit_client', 'id']);
-            const nameValue = getVal(d, ['nombre', 'razonSocial', 'razon_social', 'clientName', 'corporate_name', 'descriptionField']);
-            const statusValue = getVal(d, ['estado', 'status', 'state', 'clientStatus']);
-            const segmentValue = getVal(d, ['segmento', 'segment', 'customerSegment', 'segmento_cliente']);
-            const addressValue = getVal(d, ['direccion', 'address', 'direccion_cliente', 'fixedAddress']);
-            const dateValue = getVal(d, ['fecha_vinculacion', 'fechaVinculacion', 'creationDate', 'vinculacion']);
+            const nitValue = getVal(d, ['vchNitCliente', 'nitClient', 'nit', 'nit_client', 'id', 'vchIdentificacionCliente']);
+            const nameValue = getVal(d, ['vchRazonSocialCliente', 'razonSocial', 'nombre', 'razon_social', 'clientName', 'corporate_name', 'vchNombreCliente']);
+            const statusValue = getVal(d, ['vchEstadoCliente', 'estado', 'status', 'state', 'clientStatus', 'vchEstado']);
+            const segmentValue = getVal(d, ['vchSegmentoCliente', 'segmento', 'segment', 'customerSegment', 'segmento_cliente', 'vchSegmento']);
+            const addressValue = getVal(d, ['vchDireccionCliente', 'direccion', 'address', 'direccion_cliente', 'fixedAddress', 'vchDireccion']);
+            const dateValue = getVal(d, ['dtmFechaVinculacion', 'fecha_vinculacion', 'fechaVinculacion', 'creationDate', 'vinculacion', 'vchFechaVinculacion']);
 
             modalBody.innerHTML = `
                 ${sourceLabel}
