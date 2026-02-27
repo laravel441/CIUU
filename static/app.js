@@ -82,33 +82,21 @@ async function searchByNIT() {
         const result = await response.json();
 
         if (result.status === 'success') {
-            const d = result.data || result.client || result; // Try nested or flat
+            const infoArray = (result.data && result.data.information) ? result.data.information : [];
             let sourceLabel = (result.source && result.source.includes('demo')) ? '<span class="demo-tag">DEMO - SIMULACIÓN</span>' : '';
 
-            // Helper to find value from possible keys
-            const getVal = (obj, keys, fallback = '(No disponible)') => {
-                // Si obj es un array, buscar dentro de sus elementos (algunas APIs devuelven arrays de pares clave-valor)
-                if (Array.isArray(obj)) {
-                    for (const item of obj) {
-                        for (const k of keys) {
-                            if (item.parameter === k || item.key === k || item.id === k) return item.descField || item.value || item.text;
-                        }
-                    }
-                }
-
-                // Búsqueda estándar en objeto
-                for (const k of keys) {
-                    if (obj[k] !== undefined && obj[k] !== null && obj[k] !== "") return obj[k];
-                }
-                return fallback;
+            // Helper precise para la estructura de APIM Claro (Array de parámetros)
+            const findInInfo = (paramName, fallback = '(No disponible)') => {
+                const item = infoArray.find(i => i.parameter === paramName);
+                return item ? (item.descField || item.dataField || fallback) : fallback;
             };
 
-            const nitValue = getVal(d, ['vchNitCliente', 'nitClient', 'nit', 'nit_client', 'id', 'vchIdentificacionCliente']);
-            const nameValue = getVal(d, ['vchRazonSocialCliente', 'razonSocial', 'nombre', 'razon_social', 'clientName', 'corporate_name', 'vchNombreCliente']);
-            const statusValue = getVal(d, ['vchEstadoCliente', 'estado', 'status', 'state', 'clientStatus', 'vchEstado']);
-            const segmentValue = getVal(d, ['vchSegmentoCliente', 'segmento', 'segment', 'customerSegment', 'segmento_cliente', 'vchSegmento']);
-            const addressValue = getVal(d, ['vchDireccionCliente', 'direccion', 'address', 'direccion_cliente', 'fixedAddress', 'vchDireccion']);
-            const dateValue = getVal(d, ['dtmFechaVinculacion', 'fecha_vinculacion', 'fechaVinculacion', 'creationDate', 'vinculacion', 'vchFechaVinculacion']);
+            const nitValue = findInInfo('vchNitCliente');
+            const nameValue = findInInfo('vchRazonSocialCliente');
+            const statusValue = findInInfo('vchEstadoCliente');
+            const segmentValue = findInInfo('vchSegmentoAsignacionComercial') || findInInfo('vchSegmentoRelacional');
+            const addressValue = findInInfo('vchDireccionCliente');
+            const dateValue = findInInfo('dtmFechaVinculacion') || findInInfo('vchFechaVinculacion') || findInInfo('vchTipoCliente');
 
             modalBody.innerHTML = `
                 ${sourceLabel}
