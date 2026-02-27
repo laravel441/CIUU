@@ -24,6 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
         tabNIT.classList.remove('active');
         ciuuSection.style.display = 'block';
         nitSection.style.display = 'none';
+
+        // Ensure CIUU results/welcome are shown if search exists
+        const searchTerm = searchInput.value.trim();
+        if (searchTerm) {
+            filterTable(searchTerm.toLowerCase());
+        } else {
+            document.getElementById('welcomeMessage').style.display = 'block';
+            document.getElementById('dataTable').style.display = 'none';
+        }
     });
 
     tabNIT.addEventListener('click', () => {
@@ -32,9 +41,23 @@ document.addEventListener('DOMContentLoaded', () => {
         nitSection.style.display = 'block';
         ciuuSection.style.display = 'none';
 
+        // HIDE CIUU results when in NIT tab
+        document.getElementById('dataTable').style.display = 'none';
+        document.getElementById('welcomeMessage').style.display = 'none';
+        document.getElementById('emptyState').style.display = 'none';
+        document.getElementById('rowCount').textContent = 'Consulta de Cliente por NIT';
+
         // Show demo notice if on Render
         if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
             demoNotice.style.display = 'block';
+        }
+    });
+
+    // Add Enter key listener for NIT input
+    const nitInput = document.getElementById('nitInput');
+    nitInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            searchByNIT();
         }
     });
 });
