@@ -19,6 +19,22 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 def read_root():
     return FileResponse("static/index.html")
 
+def obtener_datos_respaldo():
+    """Carga los datos desde el archivo cache local como respaldo."""
+    cache_file = "data/api_cache.json"
+    if os.path.exists(cache_file):
+        print(f"DEBUG: Cargando datos de respaldo desde {cache_file}")
+        try:
+            import json
+            with open(cache_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                if isinstance(data, dict):
+                    data["source"] = "cache"
+                return data
+        except Exception as e_cache:
+            print(f"DEBUG: Error cargando cache: {e_cache}")
+    return None
+
 def obtener_datos_claro():
     """Función auxiliar para obtener los datos de la API de Claro sin depender del objeto Request"""
     # 1. Obtenemos el token
@@ -36,9 +52,8 @@ def obtener_datos_claro():
     }
 
     # Configuración de Certificados Cliente (mTLS)
-    # En Render, subiremos estos archivos como 'Secret Files' y pondremos la ruta en variables de entorno
-    cert_path = os.environ.get("CERT_PATH") # Ruta al archivo .crt o .pem
-    key_path = os.environ.get("KEY_PATH")   # Ruta al archivo .key
+    cert_path = os.environ.get("CERT_PATH")
+    key_path = os.environ.get("KEY_PATH")
     
     cliente_cert = None
     if cert_path and key_path and os.path.exists(cert_path) and os.path.exists(key_path):
@@ -46,10 +61,9 @@ def obtener_datos_claro():
         print(f"DEBUG: Usando certificado cliente mTLS: {cert_path}")
 
     try:
-        # Intentamos primero con data= (form-urlencoded) que es el estándar OAuth2
+        # 1. Intentamos Autenticación
         respuesta_auth = requests.post(url_auth, data=datos_auth, headers=headers_auth, cert=cliente_cert, verify=False, timeout=10)
         
-        # Si falla con 4xx o 5xx, intentamos con json= por si la API lo requiere
         if respuesta_auth.status_code != 200:
             print(f"DEBUG: Auth con form-data falló ({respuesta_auth.status_code}). Intentando con JSON...")
             respuesta_auth_json = requests.post(url_auth, json=datos_auth, headers=headers_auth, cert=cliente_cert, verify=False, timeout=10)
@@ -62,57 +76,32 @@ def obtener_datos_claro():
         access_token = token_data.get("access_token", token_data.get("token", None))
         
         if not access_token:
-            print(f"DEBUG: Respuesta auth sin token: {token_data}")
-            raise HTTPException(status_code=500, detail="No se encontró 'access_token' en la respuesta.")
-            
-    except requests.exceptions.RequestException as e:
-         error_detail = ""
-         if hasattr(e, 'response') and e.response is not None:
-             error_detail = f" | Body: {e.response.text[:200]}"
-         print(f"DEBUG: Error en auth: {str(e)}{error_detail}")
-         raise HTTPException(status_code=502, detail=f"Error al conectar con servidor de auth: {str(e)}{error_detail}")
-    
-    # 2. Hacemos la consulta a la API con ese token
-    url_api = "https://apim-calidad.claro.com.co/APIMCusAccoInfoQuery/MS/CUS/CustomerBill/RSCusAccoInfoQuery/V1/GET/InfoQuery"
-    parametros = {
-        "fieldId": "31",
-        "valueRelated": "",
-        "fieldRelationship": ""
-    }
-    cabeceras = {
-        "Authorization": f"Bearer {access_token}"
-    }
+            raise Exception("No se encontró token en respuesta")
 
-    try:
-        respuesta_api = requests.get(
-            url_api, 
-            params=parametros, 
-            headers=cabeceras, 
-            cert=cliente_cert,
-            verify=False 
-        )
+        # 2. Hacemos la consulta a la API con ese token
+        url_api = "https://apim-calidad.claro.com.co/APIMCusAccoInfoQuery/MS/CUS/CustomerBill/RSCusAccoInfoQuery/V1/GET/InfoQuery"
+        parametros = {"fieldId": "31", "valueRelated": "", "fieldRelationship": ""}
+        cabeceras = {"Authorization": f"Bearer {access_token}"}
+
+        respuesta_api = requests.get(url_api, params=parametros, headers=cabeceras, cert=cliente_cert, verify=False, timeout=10)
         respuesta_api.raise_for_status()
         
         return respuesta_api.json()
 
-    except requests.exceptions.RequestException as e:
-        print(f"DEBUG: Error en consulta API: {str(e)}")
+    except Exception as e:
+        print(f"DEBUG: Fallo en flujo API ({type(e).__name__}): {str(e)}")
         
-        # Fallback: Intentar cargar desde el cache local si la API falla
-        cache_file = "data/api_cache.json"
-        if os.path.exists(cache_file):
-            print(f"DEBUG: Cargando datos de respaldo desde {cache_file}")
-            try:
-                import json
-                with open(cache_file, "r", encoding="utf-8") as f:
-                    data = json.load(f)
-                    if isinstance(data, dict):
-                        data["source"] = "cache"
-                    return data
-            except Exception as e_cache:
-                print(f"DEBUG: Error cargando cache: {e_cache}")
+        # Fallback a datos locales
+        respaldo = obtener_datos_respaldo()
+        if respaldo:
+            return respaldo
         
-        raise HTTPException(status_code=502, detail=f"Error al consultar la API y no hay cache disponible: {str(e)}")
+        # Si ni siquiera hay respaldo, lanzamos error
+        error_msg = str(e)
+        if hasattr(e, 'response') and e.response is not None:
+             error_msg += f" | Body: {e.response.text[:100]}"
+             
+        raise HTTPException(status_code=502, detail=f"API falló y no hay respaldo: {error_msg}")
 
 
 @app.get("/api/data")
