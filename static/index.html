@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Claro - Actividades Económicas</title>
-    <link rel="stylesheet" href="/static/style.css?v=1.5">
+    <link rel="stylesheet" href="/static/style.css?v=1.6">
 </head>
 
 <body>
@@ -71,7 +71,14 @@
                 <div class="search-wrapper nit-wrapper">
                     <input type="text" id="nitInput" class="search-input"
                         placeholder="Ingresa NIT (ej: 959595-3 o 'err' para demo)...">
-                    <button class="action-btn" onclick="searchByNIT()">Consultar</button>
+                    <button class="search-btn" onclick="searchByNIT()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <span>Consultar</span>
+                    </button>
                 </div>
                 <p class="demo-notice" id="demoNotice"
                     style="display: none; color: var(--text-muted); font-size: 0.8rem; margin-top: 0.5rem; text-align: center;">
