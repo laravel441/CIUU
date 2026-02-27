@@ -130,17 +130,17 @@ def get_client_by_nit(nit: str):
         print(f"DEBUG: Modo Demo NIT activado para: {nit}")
         
         # Simulación de NIT encontrado
-        if "9595" in nit:
+        if "9595" in nit or "1098702048-3" in nit:
              return {
                 "source": "demo_found",
                 "status": "success",
                 "data": {
                     "nit": nit,
-                    "nombre": "CLIENTE DEMO S.A.S",
+                    "nombre": "CLIENTE FIDELIZADO CLARO S.A.S",
                     "estado": "Activo",
-                    "segmento": "Corporativo",
-                    "direccion": "Calle Falsa 123, Bogotá",
-                    "fecha_vinculacion": "2022-05-15"
+                    "segmento": "Corporativo / VIP",
+                    "direccion": "Avenida 68 # 45-12, Bogotá",
+                    "fecha_vinculacion": "2018-11-22"
                 }
             }
         

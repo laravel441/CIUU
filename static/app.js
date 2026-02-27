@@ -83,7 +83,7 @@ async function searchByNIT() {
 
         if (result.status === 'success') {
             const d = result.data;
-            let sourceLabel = result.source.includes('demo') ? '<span style="color:var(--warning); font-size: 0.7rem; display:block; margin-bottom: 0.5rem;">[DEMO - SIMULACIÓN]</span>' : '';
+            let sourceLabel = result.source.includes('demo') ? '<span class="demo-tag">DEMO - SIMULACIÓN</span>' : '';
 
             modalBody.innerHTML = `
                 ${sourceLabel}
