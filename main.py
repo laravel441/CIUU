@@ -35,14 +35,24 @@ def obtener_datos_claro():
         "Accept-Language": "en-US,en;q=0.9"
     }
 
+    # Configuración de Certificados Cliente (mTLS)
+    # En Render, subiremos estos archivos como 'Secret Files' y pondremos la ruta en variables de entorno
+    cert_path = os.environ.get("CERT_PATH") # Ruta al archivo .crt o .pem
+    key_path = os.environ.get("KEY_PATH")   # Ruta al archivo .key
+    
+    cliente_cert = None
+    if cert_path and key_path and os.path.exists(cert_path) and os.path.exists(key_path):
+        cliente_cert = (cert_path, key_path)
+        print(f"DEBUG: Usando certificado cliente mTLS: {cert_path}")
+
     try:
         # Intentamos primero con data= (form-urlencoded) que es el estándar OAuth2
-        respuesta_auth = requests.post(url_auth, data=datos_auth, headers=headers_auth, verify=False, timeout=10)
+        respuesta_auth = requests.post(url_auth, data=datos_auth, headers=headers_auth, cert=cliente_cert, verify=False, timeout=10)
         
         # Si falla con 4xx o 5xx, intentamos con json= por si la API lo requiere
         if respuesta_auth.status_code != 200:
             print(f"DEBUG: Auth con form-data falló ({respuesta_auth.status_code}). Intentando con JSON...")
-            respuesta_auth_json = requests.post(url_auth, json=datos_auth, headers=headers_auth, verify=False, timeout=10)
+            respuesta_auth_json = requests.post(url_auth, json=datos_auth, headers=headers_auth, cert=cliente_cert, verify=False, timeout=10)
             if respuesta_auth_json.status_code == 200:
                 respuesta_auth = respuesta_auth_json
         
@@ -78,6 +88,7 @@ def obtener_datos_claro():
             url_api, 
             params=parametros, 
             headers=cabeceras, 
+            cert=cliente_cert,
             verify=False 
         )
         respuesta_api.raise_for_status()
