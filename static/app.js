@@ -82,7 +82,8 @@ async function searchByNIT() {
         const result = await response.json();
 
         if (result.status === 'success') {
-            const infoArray = (result.data && result.data.information) ? result.data.information : [];
+            const dataNode = result.data || {};
+            const infoArray = dataNode.information || [];
             let sourceLabel = (result.source && result.source.includes('demo')) ? '<span class="demo-tag">DEMO - SIMULACIÓN</span>' : '';
 
             // Helper precise para la estructura de APIM Claro (Array de parámetros)
@@ -93,19 +94,32 @@ async function searchByNIT() {
 
             const nitValue = findInInfo('vchNitCliente');
             const nameValue = findInInfo('vchRazonSocialCliente');
+            const ciuuValue = findInInfo('vchCIUU');
+            const activityValue = findInInfo('vchActividadEconomicaCliente') || findInInfo('vchActividadEconomica');
             const statusValue = findInInfo('vchEstadoCliente');
-            const segmentValue = findInInfo('vchSegmentoAsignacionComercial') || findInInfo('vchSegmentoRelacional');
-            const addressValue = findInInfo('vchDireccionCliente');
-            const dateValue = findInInfo('dtmFechaVinculacion') || findInInfo('vchFechaVinculacion') || findInInfo('vchTipoCliente');
+
+            // Mapeo detallado de iCodigoTransaccion / codeTransaction
+            const txCode = dataNode.codeTransaction || dataNode.iCodigoTransaccion;
+            const txMap = {
+                1: "NIT válido y existente en Onyx (Super App)",
+                2: "NIT válido y existente en Onyx (No Super App)",
+                3: "NIT válido, pero no existe en Onyx",
+                4: "NIT Inválido",
+                99: "Proceso fallido"
+            };
+            const txStatus = txMap[txCode] || dataNode.message || "(Desconocido)";
 
             modalBody.innerHTML = `
                 ${sourceLabel}
                 <div class="detail-item"><span class="detail-label">NIT</span><span class="detail-val">${escapeHtml(nitValue)}</span></div>
                 <div class="detail-item"><span class="detail-label">Razón Social</span><span class="detail-val">${escapeHtml(nameValue)}</span></div>
+                <div class="detail-item"><span class="detail-label">CIUU</span><span class="detail-val">${escapeHtml(ciuuValue)}</span></div>
+                <div class="detail-item"><span class="detail-label">Actividad Económica</span><span class="detail-val">${escapeHtml(activityValue)}</span></div>
                 <div class="detail-item"><span class="detail-label">Estado</span><span class="detail-val" style="color:var(--success)">${escapeHtml(statusValue)}</span></div>
-                <div class="detail-item"><span class="detail-label">Segmento</span><span class="detail-val">${escapeHtml(segmentValue)}</span></div>
-                <div class="detail-item"><span class="detail-label">Dirección</span><span class="detail-val">${escapeHtml(addressValue)}</span></div>
-                <div class="detail-item"><span class="detail-label">Vinculación</span><span class="detail-val">${escapeHtml(dateValue)}</span></div>
+                <div class="detail-item" style="background: rgba(218, 41, 28, 0.05); border-radius: 12px; margin-top: 1.5rem; padding: 1.25rem; border: 1px solid rgba(218, 41, 28, 0.1);">
+                    <span class="detail-label" style="display:block; text-align:left; margin-bottom: 0.5rem; color: var(--primary); font-size: 0.7rem;">Estado de Transacción</span>
+                    <span class="detail-val" style="display:block; text-align:left; font-size: 0.95rem; color: var(--text-primary);">${escapeHtml(txStatus)}</span>
+                </div>
             `;
         } else if (result.status === 'not_found') {
             modalBody.innerHTML = `
