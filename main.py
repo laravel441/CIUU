@@ -30,18 +30,31 @@ def obtener_datos_claro():
     }
     
     try:
-        respuesta_auth = requests.post(url_auth, data=datos_auth, verify=False)
+        # Intentamos primero con data= (form-urlencoded) que es el estándar OAuth2
+        respuesta_auth = requests.post(url_auth, data=datos_auth, verify=False, timeout=10)
+        
+        # Si falla con 4xx o 5xx, intentamos con json= por si la API lo requiere
+        if respuesta_auth.status_code != 200:
+            print(f"DEBUG: Auth con form-data falló ({respuesta_auth.status_code}). Intentando con JSON...")
+            respuesta_auth_json = requests.post(url_auth, json=datos_auth, verify=False, timeout=10)
+            if respuesta_auth_json.status_code == 200:
+                respuesta_auth = respuesta_auth_json
+        
         respuesta_auth.raise_for_status()
         
         token_data = respuesta_auth.json()
         access_token = token_data.get("access_token", token_data.get("token", None))
         
         if not access_token:
+            print(f"DEBUG: Respuesta auth sin token: {token_data}")
             raise HTTPException(status_code=500, detail="No se encontró 'access_token' en la respuesta.")
             
     except requests.exceptions.RequestException as e:
-         print(f"DEBUG: Error en auth: {str(e)}")
-         raise HTTPException(status_code=502, detail=f"Error al conectar con servidor de auth: {str(e)}")
+         error_detail = ""
+         if hasattr(e, 'response') and e.response is not None:
+             error_detail = f" | Body: {e.response.text[:200]}"
+         print(f"DEBUG: Error en auth: {str(e)}{error_detail}")
+         raise HTTPException(status_code=502, detail=f"Error al conectar con servidor de auth: {str(e)}{error_detail}")
     
     # 2. Hacemos la consulta a la API con ese token
     url_api = "https://apim-calidad.claro.com.co/APIMCusAccoInfoQuery/MS/CUS/CustomerBill/RSCusAccoInfoQuery/V1/GET/InfoQuery"
