@@ -82,17 +82,32 @@ async function searchByNIT() {
         const result = await response.json();
 
         if (result.status === 'success') {
-            const d = result.data;
-            let sourceLabel = result.source.includes('demo') ? '<span class="demo-tag">DEMO - SIMULACIÓN</span>' : '';
+            const d = result.data || result.client || result; // Try nested or flat
+            let sourceLabel = (result.source && result.source.includes('demo')) ? '<span class="demo-tag">DEMO - SIMULACIÓN</span>' : '';
+
+            // Helper to find value from possible keys
+            const getVal = (obj, keys, fallback = '(No disponible)') => {
+                for (const k of keys) {
+                    if (obj[k]) return obj[k];
+                }
+                return fallback;
+            };
+
+            const nitValue = getVal(d, ['nit', 'nitClient', 'nit_client', 'id']);
+            const nameValue = getVal(d, ['nombre', 'razonSocial', 'razon_social', 'clientName', 'corporate_name', 'descriptionField']);
+            const statusValue = getVal(d, ['estado', 'status', 'state', 'clientStatus']);
+            const segmentValue = getVal(d, ['segmento', 'segment', 'customerSegment', 'segmento_cliente']);
+            const addressValue = getVal(d, ['direccion', 'address', 'direccion_cliente', 'fixedAddress']);
+            const dateValue = getVal(d, ['fecha_vinculacion', 'fechaVinculacion', 'creationDate', 'vinculacion']);
 
             modalBody.innerHTML = `
                 ${sourceLabel}
-                <div class="detail-item"><span class="detail-label">NIT</span><span class="detail-val">${escapeHtml(d.nit)}</span></div>
-                <div class="detail-item"><span class="detail-label">Razón Social</span><span class="detail-val">${escapeHtml(d.nombre)}</span></div>
-                <div class="detail-item"><span class="detail-label">Estado</span><span class="detail-val" style="color:var(--success)">${escapeHtml(d.estado)}</span></div>
-                <div class="detail-item"><span class="detail-label">Segmento</span><span class="detail-val">${escapeHtml(d.segmento)}</span></div>
-                <div class="detail-item"><span class="detail-label">Dirección</span><span class="detail-val">${escapeHtml(d.direccion)}</span></div>
-                <div class="detail-item"><span class="detail-label">Vinculación</span><span class="detail-val">${escapeHtml(d.fecha_vinculacion)}</span></div>
+                <div class="detail-item"><span class="detail-label">NIT</span><span class="detail-val">${escapeHtml(nitValue)}</span></div>
+                <div class="detail-item"><span class="detail-label">Razón Social</span><span class="detail-val">${escapeHtml(nameValue)}</span></div>
+                <div class="detail-item"><span class="detail-label">Estado</span><span class="detail-val" style="color:var(--success)">${escapeHtml(statusValue)}</span></div>
+                <div class="detail-item"><span class="detail-label">Segmento</span><span class="detail-val">${escapeHtml(segmentValue)}</span></div>
+                <div class="detail-item"><span class="detail-label">Dirección</span><span class="detail-val">${escapeHtml(addressValue)}</span></div>
+                <div class="detail-item"><span class="detail-label">Vinculación</span><span class="detail-val">${escapeHtml(dateValue)}</span></div>
             `;
         } else if (result.status === 'not_found') {
             modalBody.innerHTML = `

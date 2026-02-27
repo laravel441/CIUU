@@ -188,6 +188,16 @@ def get_client_by_nit(nit: str):
         r_client.raise_for_status()
         
         res = r_client.json()
+        
+        # Normalización: Si el mensaje indica éxito, aseguramos status='success'
+        message = res.get("message", "").lower()
+        if "exitosa" in message or "exito" in message or "success" in message:
+            res["status"] = "success"
+            
+        # Si no hay status pero hay datos de cliente, asumimos éxito
+        if "status" not in res and ("data" in res or "client" in res or "nit" in res):
+            res["status"] = "success"
+
         res["source"] = "live"
         return res
 
